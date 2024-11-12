@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://dp0r2qikrjfyb"]
+
+[ext_resource type="Texture2D" uid="uid://uj0merqfjr0j" path="res://Assets/PlaceholderImages/PotionCraftExampleMachineOpacityHalf.jpg" id="1_chq03"]
+[ext_resource type="Texture2D" uid="uid://x3ee60wldnga" path="res://Assets/PlaceholderImages/spr_stroked_clock.png" id="2_vbd0i"]
+[ext_resource type="Texture2D" uid="uid://bp76qkkeufu02" path="res://Assets/PlaceholderImages/spr_rock.png" id="3_l1mnj"]
+[ext_resource type="Texture2D" uid="uid://b0bhjtdg03ovm" path="res://Assets/PlaceholderImages/Scroll_Wall.png" id="4_qcgtf"]
+[ext_resource type="Texture2D" uid="uid://blxe8x2twlteg" path="res://Assets/PlaceholderImages/spr_stroked_hand.png" id="5_cl5tb"]
+
+[node name="PotionCraftExampleMachine" type="Sprite2D"]
+position = Vector2(837, 448)
+scale = Vector2(1.52333, 1.52333)
+texture = ExtResource("1_chq03")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="ClockButton" type="TextureButton" parent="HUD"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 210.0
+offset_bottom = 210.0
+texture_normal = ExtResource("2_vbd0i")
+
+[node name="PhiloStoneButton" type="TextureButton" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = 10.0
+offset_right = 32.0
+offset_bottom = 74.0
+grow_horizontal = 2
+texture_normal = ExtResource("3_l1mnj")
+
+[node name="SettingsButton" type="TextureButton" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -125.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 161.0
+grow_horizontal = 0
+texture_normal = ExtResource("4_qcgtf")
+
+[node name="HandButton" type="TextureButton" parent="HUD"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 105.0
+offset_top = -179.0
+offset_right = 220.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("5_cl5tb")

@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dp0r2qikrjfyb"]
-
-[ext_resource type="Texture2D" uid="uid://ofrhqb8tlnds" path="res://Assets/Magical/spr_stroked_potion_blue.png" id="1_ufdtd"]
-
-[node name="TestPotion" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(523, 254)
-texture = ExtResource("1_ufdtd")
