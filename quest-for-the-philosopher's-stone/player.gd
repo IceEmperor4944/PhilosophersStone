@@ -10,16 +10,13 @@ func _ready() -> void:
 func _input(event):
 	var isClicked = false;
 	if event is InputEventMouseButton:
-		
-			
+						
 		if (get_global_mouse_position().x <= $AnimatedSprite2D.global_position.x + $AnimatedSprite2D.get_parent().position.x/20) && (get_global_mouse_position().x >= $AnimatedSprite2D.global_position.x - $AnimatedSprite2D.get_parent().position.x / 20):
+			position = get_global_mouse_position();
 			$RichTextLabel.clear();
 			$RichTextLabel.add_text("Clicked!");
 			isClicked = true;
-			
-		else:
-			if  (isClicked):
-				position = get_global_mouse_position();	
+		elif Input.is_action_just_released("pick_up"):
 			$RichTextLabel.clear();
 			$RichTextLabel.add_text("Not Clicked!");
 			isClicked = false;
