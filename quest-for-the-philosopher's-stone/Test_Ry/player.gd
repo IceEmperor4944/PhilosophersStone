@@ -7,33 +7,29 @@ var screen_size
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
 
-var has_mouse:bool = false
+var has_mouse:bool = false;
 
-func _on_area_2d_mouse_entered():
-	has_mouse = true;
-func _on_area_2d_mouse_exited():
-	has_mouse = false;
-#func _input(event):
-	#var isClicked = false;
-	#if event is InputEventMouseButton:
-						#
-		#if (get_global_mouse_position().x <= $AnimatedSprite2D.global_position.x + $AnimatedSprite2D.get_parent().position.x/20) && (get_global_mouse_position().x >= $AnimatedSprite2D.global_position.x - $AnimatedSprite2D.get_parent().position.x / 20):
-			#position = get_global_mouse_position();
-			#$RichTextLabel.clear();
-			#$RichTextLabel.add_text("Clicked!");
-			#isClicked = true;
-		#else:
-			#$RichTextLabel.clear();
-			#$RichTextLabel.add_text("Not Clicked!");
-			#isClicked = false;
-			#
-	#return isClicked;
+func _input(event):
+	var isClicked:bool = false;
+	if event is InputEventMouseButton:
+		
+		if (get_global_mouse_position().x <= $AnimatedSprite2D.global_position.x + $AnimatedSprite2D.get_parent().position.x/20) && (get_global_mouse_position().x >= $AnimatedSprite2D.global_position.x - $AnimatedSprite2D.get_parent().position.x / 20):
+			position = get_global_mouse_position();
+			$RichTextLabel.clear();
+			$RichTextLabel.add_text("Clicked!");
+			isClicked = true;
+		elif (Input.is_action_just_released("pick_up")):
+			$RichTextLabel.clear();
+			$RichTextLabel.add_text("Not Clicked!");
+			isClicked = false;
+			
+	return isClicked;
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO
 	
-	if (Input.is_action_pressed("pick_up") && has_mouse):
+	if (Input.is_action_pressed("pick_up") && _input(InputEventMouseButton) == true):
 		position = get_global_mouse_position();
 	
 			
