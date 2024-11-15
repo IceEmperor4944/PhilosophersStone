@@ -1,6 +1,7 @@
-extends Node2D
+class_name IngredientManager extends Node2D
 
 var ingredient_scene = load("res://Test_Ry/Test.tscn") as PackedScene
+@onready var ingredient = load("res://Actors/ingredient.gd").new() as Ingredient;
 
 var list = {
 	"water" = [[1, 0, 0, 0], "res://Assets/Magical/spr_stroked_potion_testtube_blue.png"],
@@ -23,23 +24,21 @@ func _process(delta: float) -> void:
 
 
 #Enter name of ingredient (not capitalized) as type
-func AssignIngredient(type, ingredient):
-	ingredient = load("res://Test_Ry/waterspawner.gd").new();
-	if type in list: 
-		ingredient.AssignType(type)
-		ingredient.AssignRecipe(list[type][0])
-		ingredient.AssignSprite(list[type][1])
+func AssignIngredient(_type, _ingredient):
+	_ingredient = Ingredient.new();
+	if _type in list: 
+		_ingredient.AssignType(_type)
+		_ingredient.AssignRecipe(list[_type][0])
+		_ingredient.AssignSprite(list[_type][1])
 	else:
-		ingredient.AssignType("Error")
-	return ingredient
+		_ingredient.AssignType("Error")
+	return _ingredient
 
 
 #if ingredient type does not exist, then ingredient type will be "Error"
 #Additionally, if type does not exist, all other fields will be empty
 func CreateIngredient(type):
-	var ingredient = ingredient_scene.instantiate()
-	ingredient = $Ingredient
-	
+	ingredient = Ingredient.new();
 	ingredient = AssignIngredient(type, ingredient)
 	
 	return ingredient
