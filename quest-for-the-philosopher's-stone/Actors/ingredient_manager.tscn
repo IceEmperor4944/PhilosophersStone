@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://4d1agdy5r1l7"]
+
+[ext_resource type="Script" path="res://Actors/ingredient_manager.gd" id="1_vx3ih"]
+[ext_resource type="PackedScene" uid="uid://dtrk07kobbm28" path="res://Actors/ingredient.tscn" id="2_thx7l"]
+[ext_resource type="Texture2D" uid="uid://ofrhqb8tlnds" path="res://Assets/Sprites/Magical/spr_stroked_potion_blue.png" id="3_uf2wq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f2xkb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uf2wq")
+}],
+"loop": true,
+"name": &"water",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4vvpe"]
+radius = 33.1839
+height = 86.0
+
+[node name="IngredientManager" type="Node2D"]
+script = ExtResource("1_vx3ih")
+
+[node name="Ingredient" parent="." instance=ExtResource("2_thx7l")]
+position = Vector2(169, 181)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Ingredient"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_f2xkb")
+animation = &"water"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Ingredient"]
+offset_right = 194.0
+offset_bottom = 40.0
+text = "Corrdinates:"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ingredient"]
+rotation = -0.333078
+shape = SubResource("CapsuleShape2D_4vvpe")

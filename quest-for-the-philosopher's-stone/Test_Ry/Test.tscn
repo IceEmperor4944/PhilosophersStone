@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://1pankatdktfq"]
+
+[ext_resource type="Script" path="res://Test_Ry/waterspawner.gd" id="1_6bkl0"]
+[ext_resource type="Script" path="res://Actors/ingredient_manager.gd" id="1_chm4a"]
+[ext_resource type="Texture2D" uid="uid://ofrhqb8tlnds" path="res://Assets/Sprites/Magical/spr_stroked_potion_blue.png" id="2_hn1tf"]
+[ext_resource type="PackedScene" uid="uid://4d1agdy5r1l7" path="res://Actors/ingredient_manager.tscn" id="2_jxfkg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_48kia"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hn1tf")
+}],
+"loop": true,
+"name": &"water",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hxvn1"]
+radius = 33.1839
+height = 86.0
+
+[node name="Ingredient_Manager_Test" type="Node2D"]
+position = Vector2(3, 2)
+script = ExtResource("1_chm4a")
+ingredient_scene = ExtResource("2_jxfkg")
+
+[node name="WaterSpawner" type="Area2D" parent="."]
+position = Vector2(469, 206)
+script = ExtResource("1_6bkl0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WaterSpawner"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_48kia")
+animation = &"water"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="WaterSpawner"]
+offset_right = 194.0
+offset_bottom = 40.0
+text = "Corrdinates:"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterSpawner"]
+rotation = -0.333078
+shape = SubResource("CapsuleShape2D_hxvn1")
