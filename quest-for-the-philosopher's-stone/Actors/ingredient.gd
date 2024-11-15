@@ -33,5 +33,5 @@ func AssignRecipe(recipe):
 		
 #"Type" here is for what type of ingredient is being assigned
 func AssignSprite(spritePathString):
-	$AnimatedSprite2D.texture = load(spritePathString)
+	$AnimatedSprite2D.texture = load(spritePathString);
 	

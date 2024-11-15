@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byedbky0pb6bo"
-path="res://.godot/imported/spr_stroked_potion_yellow.png-7d4badcd30bad44cd5bbf8e29fc4b9d3.ctex"
+path="res://.godot/imported/spr_stroked_potion_yellow.png-61b2c58ea54abf3e7d8938c6e59013d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Magical/spr_stroked_potion_yellow.png"
-dest_files=["res://.godot/imported/spr_stroked_potion_yellow.png-7d4badcd30bad44cd5bbf8e29fc4b9d3.ctex"]
+source_file="res://Assets/Magical/spr_stroked_potion_yellow.png"
+dest_files=["res://.godot/imported/spr_stroked_potion_yellow.png-61b2c58ea54abf3e7d8938c6e59013d3.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var ingredient_scene: PackedScene
+var ingredient_scene = load("res://Test_Ry/Test.tscn") as PackedScene
 
 var list = {
 	"water" = [[1, 0, 0, 0], "res://Assets/Magical/spr_stroked_potion_testtube_blue.png"],
@@ -24,6 +24,7 @@ func _process(delta: float) -> void:
 
 #Enter name of ingredient (not capitalized) as type
 func AssignIngredient(type, ingredient):
+	ingredient = load("res://Test_Ry/waterspawner.gd").new();
 	if type in list: 
 		ingredient.AssignType(type)
 		ingredient.AssignRecipe(list[type][0])
