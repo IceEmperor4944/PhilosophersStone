@@ -1,15 +1,24 @@
 extends Area2D
+
 @export var speed = 400;
-var screen_size
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	screen_size = get_viewport_rect().size
-
+var screen_size;
 var has_mouse:bool = false;
 
+# Called when the node enters the scene tree for the first time.
+
+var ingredient_script
+var ingredient_manager_script;
+
+func _ready():
+	screen_size = get_viewport_rect().size;
+	ingredient_script = load("res://Actors/ingredient.gd").new();
+	ingredient_manager_script = load("res://Actors/ingredient_manager.gd").new();
+
+	
 func _input(event):
+	
+	
 	if event is InputEventMouseButton:
 		
 		if Input.is_action_pressed("pick_up") && (get_global_mouse_position().x <= $AnimatedSprite2D.global_position.x + $AnimatedSprite2D.get_parent().position.x/20) && (get_global_mouse_position().x >= $AnimatedSprite2D.global_position.x - $AnimatedSprite2D.get_parent().position.x / 20):
@@ -24,6 +33,7 @@ func _input(event):
 				
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	var velocity = Vector2.ZERO
 	
 	if (has_mouse):
