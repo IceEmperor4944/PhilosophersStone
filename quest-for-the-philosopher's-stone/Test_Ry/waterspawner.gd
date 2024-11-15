@@ -3,9 +3,6 @@ class_name Spawner extends IngredientManager
 @export var speed = 400;
 #var ingredient_scene = load("res://Test_Ry/Test.tscn") as PackedScene;
 #Type name (identifier) of ingredient
-var type = ""
-#Recipe order will be water earth fire, air 
-var recipe = [0, 0, 0, 0]
 var screen_size;
 var has_mouse:bool = false;
 var ingredient_manager_script;

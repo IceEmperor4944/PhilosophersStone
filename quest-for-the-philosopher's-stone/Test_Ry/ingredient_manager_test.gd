@@ -1,7 +1,7 @@
 class_name IngredientManager extends Node2D
 
 var ingredient_scene = load("res://Test_Ry/Test.tscn") as PackedScene
-@onready var ingredient = load("res://Actors/ingredient.gd").new() as Ingredient;
+@onready var ingredient = load("res://Actors/ingredient_test.gd").new() as Ingredient;
 
 var list = {
 	"water" = [[1, 0, 0, 0], "res://Assets/Magical/spr_stroked_potion_testtube_blue.png"],
