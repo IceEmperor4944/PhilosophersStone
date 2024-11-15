@@ -1,42 +1,41 @@
 extends CanvasLayer
 
 #region Clock Button Functionality
-
-func _on_clock_btn_mouse_entered():
-	$ClockBtn/ClockInfoPanel.visible = true
-
-func _on_clock_btn_mouse_exited():
-	$ClockBtn/ClockInfoPanel.visible = false
+# Change the hour of the game if that functionality is needed
+# Or if not just change the tint to make it feel more spooky or more vibrant
 #endregion
 
 
 #region Philosopher's Stone Button Functionality
-
-func _on_philo_stone_btn_mouse_entered():
-	$PhiloStoneBtn/PhiloStoneInfoPanel.visible = true
-
-func _on_philo_stone_btn_mouse_exited():
-	$PhiloStoneBtn/PhiloStoneInfoPanel.visible = false
+# Have the icon change based on the current progress
+# Possibly have the functionality of when pressed pop up a list of whatever
 #endregion
 
 
 #region Settings Button Functionality
+func _on_settings_btn_toggled(toggled_on: bool):
+	$SettingsMenu.visible = toggled_on
+#endregion
 
-func _on_settings_btn_mouse_entered():
-	$SettingsBtn/SettingsInfoPanel.visible = true
 
-func _on_settings_btn_mouse_exited():
-	$SettingsBtn/SettingsInfoPanel.visible = false
+#region Settings Menu Functionality
+func _on_new_game_btn_pressed():
+	# Restart the game.
+	pass 
+
+
+func _on_vol_slider_value_changed(value: float) -> void:
+	# Change the volume of the background music
+	pass 
 #endregion
 
 
 #region Hand Button Functionality
-func _on_hand_btn_mouse_entered():
-	$HandBtn/HandInfoPanel.visible =  true
+# Item choices menu such as dropping it?
+# Call this function 
+func ChangeHeldItem(newItemTexture):
+	$HeldItem.set_texture(newItemTexture)
 	
-func _on_hand_btn_mouse_exited():
-	$HandBtn/HandInfoPanel.visible =  false
-
 #endregion
 
 

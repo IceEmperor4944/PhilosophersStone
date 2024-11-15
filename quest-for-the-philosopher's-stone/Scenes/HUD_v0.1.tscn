@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dp0r2qikrjfyb"]
+[gd_scene load_steps=8 format=3 uid="uid://dp0r2qikrjfyb"]
 
 [ext_resource type="Script" path="res://Scripts/hud_v_0.1.gd" id="1_ukfln"]
 [ext_resource type="Texture2D" uid="uid://uj0merqfjr0j" path="res://Assets/Sprites/PlaceholderImages/PotionCraftExampleMachineOpacityHalf.jpg" id="2_oxsps"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bp76qkkeufu02" path="res://Assets/Sprites/PlaceholderImages/spr_rock.png" id="4_6eisy"]
 [ext_resource type="Texture2D" uid="uid://b0bhjtdg03ovm" path="res://Assets/Sprites/PlaceholderImages/Scroll_Wall.png" id="5_sych2"]
 [ext_resource type="Texture2D" uid="uid://blxe8x2twlteg" path="res://Assets/Sprites/PlaceholderImages/spr_stroked_hand.png" id="6_t5kjj"]
+[ext_resource type="Texture2D" uid="uid://d0o1b275n4it0" path="res://Assets/Sprites/PlaceholderImages/volumeScaledDown.png" id="7_l7vpp"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_ukfln")
@@ -20,28 +21,9 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 210.0
 offset_bottom = 210.0
+tooltip_text = "Change Time"
 texture_normal = ExtResource("3_s4xdk")
 metadata/_edit_use_anchors_ = true
-
-[node name="ClockInfoPanel" type="PanelContainer" parent="ClockBtn"]
-visible = false
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 36.0
-offset_top = -118.0
-offset_right = 236.0
-offset_bottom = -73.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="ClockLabel" type="Label" parent="ClockBtn/ClockInfoPanel"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Change Time"
 
 [node name="PhiloStoneBtn" type="TextureButton" parent="."]
 anchors_preset = 5
@@ -52,28 +34,9 @@ offset_top = 10.0
 offset_right = 32.0
 offset_bottom = 74.0
 grow_horizontal = 2
+tooltip_text = "View Progress"
 texture_normal = ExtResource("4_6eisy")
 metadata/_edit_use_anchors_ = true
-
-[node name="PhiloStoneInfoPanel" type="PanelContainer" parent="PhiloStoneBtn"]
-visible = false
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -107.0
-offset_top = 17.0
-offset_right = 109.0
-offset_bottom = 62.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="PhiloStoneLabel" type="Label" parent="PhiloStoneBtn/PhiloStoneInfoPanel"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "View Progress"
 
 [node name="SettingsBtn" type="TextureButton" parent="."]
 anchors_preset = 1
@@ -84,25 +47,10 @@ offset_top = 10.0
 offset_right = -10.0
 offset_bottom = 161.0
 grow_horizontal = 0
+tooltip_text = "Settings"
+toggle_mode = true
 texture_normal = ExtResource("5_sych2")
 metadata/_edit_use_anchors_ = true
-
-[node name="SettingsInfoPanel" type="PanelContainer" parent="SettingsBtn"]
-visible = false
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = -190.0
-offset_top = -71.0
-offset_right = -150.0
-offset_bottom = -31.0
-grow_vertical = 0
-
-[node name="SettingsLabel" type="Label" parent="SettingsBtn/SettingsInfoPanel"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Settings"
 
 [node name="HandBtn" type="TextureButton" parent="."]
 anchors_preset = 7
@@ -116,34 +64,72 @@ offset_right = 262.5
 offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 0
+tooltip_text = "Holding"
 texture_normal = ExtResource("6_t5kjj")
 metadata/_edit_use_anchors_ = true
 
-[node name="HandInfoPanel" type="PanelContainer" parent="HandBtn"]
-visible = false
-layout_mode = 1
-offset_left = -66.5
-offset_top = -70.0
-offset_right = -26.5
-offset_bottom = -30.0
-
-[node name="HandLabel" type="Label" parent="HandBtn/HandInfoPanel"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Holding"
-
 [node name="SettingsMenu" type="PanelContainer" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -188.0
+offset_top = -99.0
+offset_right = 188.0
+offset_bottom = 170.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsMenu"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="NewGameBtn" type="Button" parent="SettingsMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "New Game"
+
+[node name="Spacer" type="Control" parent="SettingsMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="VolSlider" type="HSlider" parent="SettingsMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+tooltip_text = "Volume"
+theme_override_icons/grabber = ExtResource("7_l7vpp")
+theme_override_icons/grabber_highlight = ExtResource("7_l7vpp")
+value = 50.0
+rounded = true
+
+[node name="Spacer2" type="Control" parent="SettingsMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="HeldItem" type="TextureRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -198.0
+offset_right = 20.0
+offset_bottom = -158.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [connection signal="mouse_entered" from="ClockBtn" to="." method="_on_clock_btn_mouse_entered"]
 [connection signal="mouse_exited" from="ClockBtn" to="." method="_on_clock_btn_mouse_exited"]
@@ -151,5 +137,8 @@ grow_vertical = 2
 [connection signal="mouse_exited" from="PhiloStoneBtn" to="." method="_on_philo_stone_btn_mouse_exited"]
 [connection signal="mouse_entered" from="SettingsBtn" to="." method="_on_settings_btn_mouse_entered"]
 [connection signal="mouse_exited" from="SettingsBtn" to="." method="_on_settings_btn_mouse_exited"]
+[connection signal="toggled" from="SettingsBtn" to="." method="_on_settings_btn_toggled"]
 [connection signal="mouse_entered" from="HandBtn" to="." method="_on_hand_btn_mouse_entered"]
 [connection signal="mouse_exited" from="HandBtn" to="." method="_on_hand_btn_mouse_exited"]
+[connection signal="pressed" from="SettingsMenu/MarginContainer/VBoxContainer/NewGameBtn" to="." method="_on_new_game_btn_pressed"]
+[connection signal="value_changed" from="SettingsMenu/MarginContainer/VBoxContainer/VolSlider" to="." method="_on_vol_slider_value_changed"]
