@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dp0r2qikrjfyb"]
+[gd_scene load_steps=7 format=3 uid="uid://dp0r2qikrjfyb"]
 
 [ext_resource type="Script" path="res://Scripts/hud_v_0.1.gd" id="1_ukfln"]
-[ext_resource type="Texture2D" uid="uid://uj0merqfjr0j" path="res://Assets/Sprites/PlaceholderImages/PotionCraftExampleMachineOpacityHalf.jpg" id="2_oxsps"]
 [ext_resource type="Texture2D" uid="uid://x3ee60wldnga" path="res://Assets/Sprites/PlaceholderImages/spr_stroked_clock.png" id="3_s4xdk"]
 [ext_resource type="Texture2D" uid="uid://bp76qkkeufu02" path="res://Assets/Sprites/PlaceholderImages/spr_rock.png" id="4_6eisy"]
 [ext_resource type="Texture2D" uid="uid://b0bhjtdg03ovm" path="res://Assets/Sprites/PlaceholderImages/Scroll_Wall.png" id="5_sych2"]
@@ -10,11 +9,6 @@
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_ukfln")
-
-[node name="PotionCraftExampleMachineOpacityHalf" type="Sprite2D" parent="."]
-position = Vector2(822.5, 461.5)
-scale = Vector2(1.37917, 1.57833)
-texture = ExtResource("2_oxsps")
 
 [node name="ClockBtn" type="TextureButton" parent="."]
 offset_left = 10.0
