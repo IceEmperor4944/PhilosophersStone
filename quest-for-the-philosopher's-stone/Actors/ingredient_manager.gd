@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-#Enter name of ingredient (not capitalized) as type
+#Enter name of ingredient (not capitalized) as type, and instance of ingredient as ingredient
 func AssignIngredient(type, ingredient):
 	if type in list: 
 		ingredient.AssignType(type)
