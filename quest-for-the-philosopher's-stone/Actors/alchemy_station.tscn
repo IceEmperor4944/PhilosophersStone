@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbyvau6uoyg32"]
-
-[ext_resource type="Script" path="res://Actors/alchemy_station.gd" id="1_scwq3"]
-
-[node name="AlchemyStation" type="Area2D"]
-script = ExtResource("1_scwq3")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
