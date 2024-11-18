@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3qyrkfk6854"
-path="res://.godot/imported/spr_stroked_scroll_close_sealed_green.png-7abcf6241ef41655374d7d3bd35c885f.ctex"
+uid="uid://bo7kqh6a2gsme"
+path="res://.godot/imported/spr_stroked_scroll_close_sealed_purple.png-e5fa08fdc5fdab56987d5ac07331413d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Magical/spr_stroked_scroll_close_sealed_green.png"
-dest_files=["res://.godot/imported/spr_stroked_scroll_close_sealed_green.png-7abcf6241ef41655374d7d3bd35c885f.ctex"]
+source_file="res://Assets/Magical/spr_stroked_scroll_close_sealed_purple.png"
+dest_files=["res://.godot/imported/spr_stroked_scroll_close_sealed_purple.png-e5fa08fdc5fdab56987d5ac07331413d.ctex"]
 
 [params]
 

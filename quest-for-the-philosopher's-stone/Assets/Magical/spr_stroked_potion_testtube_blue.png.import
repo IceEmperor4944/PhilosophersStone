@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnvlqkrh0src2"
-path="res://.godot/imported/spr_stroked_potion_testtube_green.png-5a82613c1269101c27714e4e8da4d47f.ctex"
+uid="uid://ceofdt04xoijm"
+path="res://.godot/imported/spr_stroked_potion_testtube_blue.png-c3d8eb4a213b2dd2af3608b4506d25d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Magical/spr_stroked_potion_testtube_green.png"
-dest_files=["res://.godot/imported/spr_stroked_potion_testtube_green.png-5a82613c1269101c27714e4e8da4d47f.ctex"]
+source_file="res://Assets/Magical/spr_stroked_potion_testtube_blue.png"
+dest_files=["res://.godot/imported/spr_stroked_potion_testtube_blue.png-c3d8eb4a213b2dd2af3608b4506d25d2.ctex"]
 
 [params]
 
