@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dtrk07kobbm28"]
 
-[ext_resource type="Script" path="res://Actors/ingredient.gd" id="1_8uvyx"]
+[ext_resource type="Script" path="res://Scripts/ingredient.gd" id="1_8uvyx"]
 [ext_resource type="Texture2D" uid="uid://vgy6kyyk6o51" path="res://Assets/Magical/spr_stroked_potion_testtube_cyan.png" id="2_8v0wi"]
 [ext_resource type="Texture2D" uid="uid://bnvlqkrh0src2" path="res://Assets/Magical/spr_stroked_potion_testtube_green.png" id="3_eso6x"]
 [ext_resource type="Texture2D" uid="uid://cxm6i3mxvuutn" path="res://Assets/Magical/spr_stroked_potion_testtube_orange.png" id="4_kutm6"]
