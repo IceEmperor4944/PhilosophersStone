@@ -3,13 +3,14 @@ class_name Spawner extends Ingredient
 #have objects in display in an array
 
 @export var speed = 400;
-#var ingredient_scene = load("res://Test_Ry/Test.tscn") as PackedScene;
 #Type name (identifier) of ingredient
+
+var ingredient_scene = load("res://Test_Ry/Test.tscn") as PackedScene;
 var screen_size;
 var has_mouse:bool = false;
 var ingredient_manager_script;
-@onready var ingredient_manager = load("res://Test_Ry/ingredient_manager_test.gd").new() as IngredientManager;
-@onready var ingredient = load("res://Test_Ry/ingredient_test.gd").new() as Ingredient;
+@onready var ingredient_manager = load("res://Scripts/ingredient_manager_test.gd").new() as IngredientManager;
+@onready var ingredient = load("res://Scripts/ingredient_test.gd").new() as Ingredient;
 @onready var label = $RichTextLabel;
 
 # Called when the node enters the scene tree for the first time.
@@ -23,9 +24,6 @@ func _input(event):
 			if (get_global_mouse_position().y <= $Sprite2D.global_position.y + $Sprite2D.get_parent().position.y/5) && (get_global_mouse_position().y >= $Sprite2D.global_position.y - $Sprite2D.get_parent().position.y /5):
 				ingredient = Spawner.new();
 				ingredient = ingredient_manager.CreateIngredient("water");
-				ingredient.AssignSprite("res://Assets/Magical/spr_stroked_potion_cyan.png");
-				ingredient.position = position;
-				add_sibling(ingredient);
 				
 				has_mouse = true;
 				label.clear();
