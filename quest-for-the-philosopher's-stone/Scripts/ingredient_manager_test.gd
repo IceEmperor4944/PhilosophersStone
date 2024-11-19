@@ -1,7 +1,11 @@
 class_name IngredientManager extends Node2D
 
-var ingredient_scene = load("res://Test_Ry/Test.tscn") as PackedScene
-@onready var ingredient = load("res://Test_Ry/ingredient_test.gd").new() as Ingredient;
+var ingredient_scene = load("res://Scenes/HUD_v0.1.tscn") as PackedScene
+var has_mouse:bool = false;
+var screen_size;
+
+@onready var label = $RichTextLabel;
+@onready var ingredient = load("res://Scripts/ingredient_test.gd").new() as Ingredient;
 
 var list = {
 	"water" = [[1, 0, 0, 0], "res://Assets/Magical/spr_stroked_potion_testtube_blue.png"],
@@ -15,12 +19,14 @@ var list = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	screen_size = get_viewport_rect().size;
+	IngredientManager.new();	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if (has_mouse):
+		position = get_global_mouse_position();
 
 
 #Enter name of ingredient (not capitalized) as type
@@ -56,3 +62,19 @@ func FindRecipeByType(type):
 		return type[1]
 	else:
 		return "Error"
+
+
+func _on_hand_btn_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if Input.is_action_pressed("pick_up") && (get_global_mouse_position().x <= global_position.x + $Sprite2D.get_parent().position.x/10) && (get_global_mouse_position().x >= $Sprite2D.global_position.x - $Sprite2D.get_parent().position.x /10):
+			if (get_global_mouse_position().y <= $Sprite2D.global_position.y + $Sprite2D.get_parent().position.y/5) && (get_global_mouse_position().y >= $Sprite2D.global_position.y - $Sprite2D.get_parent().position.y /5):
+				CreateIngredient("water");
+				
+				has_mouse = true;
+				label.clear();
+				label.add_text("Clicked!");
+		elif (Input.is_action_just_released("pick_up")):
+			has_mouse = false;
+			label.clear();
+			label.add_text("Not Clicked!");
+				
