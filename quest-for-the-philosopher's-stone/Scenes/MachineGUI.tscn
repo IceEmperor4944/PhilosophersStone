@@ -1,0 +1,106 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch0utvogqndvw"]
+
+[ext_resource type="Script" path="res://Scripts/machine_gui.gd" id="1_kaw44"]
+[ext_resource type="Texture2D" uid="uid://4eq3x217ekc8" path="res://Assets/Sprites/PlaceholderImages/SimpleMachine.png" id="1_lkpic"]
+[ext_resource type="Texture2D" uid="uid://blxe8x2twlteg" path="res://Assets/Sprites/PlaceholderImages/spr_stroked_hand.png" id="3_74r6s"]
+
+[node name="Machine" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kaw44")
+
+[node name="SimpleMachine" type="Sprite2D" parent="."]
+position = Vector2(652, 339)
+texture = ExtResource("1_lkpic")
+
+[node name="VSlider" type="VSlider" parent="."]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 154.0
+offset_right = 414.0
+offset_bottom = 375.0
+step = 5.0
+rounded = true
+tick_count = 20
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 263.0
+offset_right = 214.0
+offset_bottom = 286.0
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="VSlider2" type="VSlider" parent="."]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 165.0
+offset_right = 641.0
+offset_bottom = 386.0
+step = 5.0
+tick_count = 20
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 254.0
+offset_right = 468.0
+offset_bottom = 277.0
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="VSlider3" type="VSlider" parent="."]
+layout_mode = 0
+offset_left = 662.0
+offset_top = 148.0
+offset_right = 856.0
+offset_bottom = 369.0
+step = 5.0
+tick_count = 20
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 634.0
+offset_top = 252.0
+offset_right = 674.0
+offset_bottom = 275.0
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="VSlider4" type="VSlider" parent="."]
+layout_mode = 0
+offset_left = 887.0
+offset_top = 154.0
+offset_right = 1081.0
+offset_bottom = 375.0
+step = 5.0
+tick_count = 20
+ticks_on_borders = true
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 863.0
+offset_top = 247.0
+offset_right = 903.0
+offset_bottom = 270.0
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 555.0
+offset_top = 527.0
+offset_right = 755.0
+offset_bottom = 727.0
+texture_normal = ExtResource("3_74r6s")
+
+[connection signal="value_changed" from="VSlider" to="." method="_on_v_slider_value_changed"]
+[connection signal="value_changed" from="VSlider2" to="." method="_on_v_slider_2_value_changed"]
+[connection signal="value_changed" from="VSlider3" to="." method="_on_v_slider_3_value_changed"]
+[connection signal="value_changed" from="VSlider4" to="." method="_on_v_slider_4_value_changed"]
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]
