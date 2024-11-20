@@ -24,14 +24,15 @@ func AssignType(name):
 	type = name
 
 
-func AssignRecipe(recipe):
-	var i = 0;
+#func AssignRecipe(recipe):
+#	var i = 0;
 	
-	for element in recipe:
-		m_recipe[i] = element
-		i += 1
+#	for element in recipe:
+#		m_recipe[i] = element
+#		i += 1
 		
 #"Type" here is for what type of ingredient is being assigned
-func AssignSprite(spritePathString):
-	$AnimatedSprite2D.texture = load(spritePathString);
-	
+#func AssignSprite(spritePathString):
+#	$AnimatedSprite2D.texture = load(spritePathString);
+#	#
+###

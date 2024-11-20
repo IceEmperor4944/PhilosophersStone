@@ -7,6 +7,8 @@ var screen_size;
 @onready var label = $RichTextLabel;
 @onready var ingredient = load("res://Scripts/ingredient_test.gd").new() as Ingredient;
 
+#Official template for adding ingredients 
+#"ice" = [[["water", 0.5], ["air", 0.5], ["null", 0], ["null", 0], sprite]
 var list = {
 	"water" = [[1, 0, 0, 0], "res://Assets/Magical/spr_stroked_potion_testtube_blue.png"],
 	"earth" = [[0, 1, 0, 0], "res://Assets/Magical/spr_stroked_potion_testtube_green.png"],
@@ -16,6 +18,8 @@ var list = {
 	"philosophersStone" = [[0.25, 0.25, 0.5, 0], "res://Assets/Magical/spr_stroked_potion_yellow.png"]
 
 }
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
