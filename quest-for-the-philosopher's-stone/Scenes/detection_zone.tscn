@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj0flm2ys1le8"]
+
+[ext_resource type="Script" path="res://detection_zone.gd" id="1_cgfwe"]
+
+[node name="DetectionZone" type="Node2D"]
+script = ExtResource("1_cgfwe")
+
+[node name="Area2D" type="Area2D" parent="."]

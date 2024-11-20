@@ -2,9 +2,9 @@ extends Area2D
 
 signal element_created(recipe)
 
-var activeInput = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+var activeInput = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-var numSlots = 4 #number of elements in a recipe
+var numSlots = 24 #number of elements in a recipe
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,7 +26,11 @@ func on_add_ingredient(recipe, position):
 # ready to attach to necessary signal
 # for use when an ingredient is removed from the table BUT IS NOT REPLACED
 func on_ingredient_removed(position):
-	activeInput[position] = [0, 0, 0, 0]
+	activeInput[position] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+	
+	
+	#DO NOT FORGET to add a fuction to change ratio of amount each element in the table
+	
 	
 # ready to attach to a signal
 # for use when alchemy table is activated to combine what it currently on it
@@ -34,10 +38,10 @@ func on_Combine_Ingredients():
 	var numTypes = 0
 	
 	#next variables are for each element that can be in the recipe
-	var newRecipe = [0, 0, 0, 0]
+	var newRecipe = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	
 	for type in activeInput:
-		if type != [0, 0, 0, 0]:
+		if type != [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]:
 			numTypes += 1
 	
 	for i in range(numSlots):
