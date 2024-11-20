@@ -3,13 +3,10 @@ class_name Spawner extends Ingredient
 #have objects in display in an array
 
 @export var speed = 400;
-
-var ingredient_scene = load("res://Scenes/HUD_v0.1.tscn") as PackedScene;
 var screen_size;
 var has_mouse:bool = false;
 var ingredient_manager_script;
 @onready var ingredient_manager = load("res://Scripts/ingredient_manager_test.gd").new() as IngredientManager;
-@onready var ingredient = load("res://Scripts/ingredient_test.gd").new() as Ingredient;
 @onready var newIngredient = Spawner.new();
 @onready var label = $RichTextLabel;
 
