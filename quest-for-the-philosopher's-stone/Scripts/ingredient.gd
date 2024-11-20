@@ -1,11 +1,7 @@
 class_name Ingredient extends Area2D
 
 @export var sprite = Sprite2D.new();
-var ingredient_scene = load("res://Scenes/HUD_v0.1.tscn") as PackedScene
-var has_mouse:bool = false;
-var screen_size;
 
-@onready var label = $RichTextLabel;
 @onready var ingredient = load("res://Scripts/ingredient_test.gd").new() as Ingredient;
 var type = ""
 
@@ -50,7 +46,6 @@ func AssignIngredient(_type, _ingredient):
 #if ingredient type does not exist, then ingredient type will be "Error"
 #Additionally, if type does not exist, all other fields will be empty
 func CreateIngredient(type):
-	ingredient = ingredient_scene.instantiate();
 	AssignIngredient(type, ingredient);
 	
 	return ingredient
