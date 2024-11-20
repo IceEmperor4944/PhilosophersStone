@@ -24,18 +24,7 @@ func _on_new_game_btn_pressed():
 	pass 
 
 
-func _on_vol_slider_value_changed(value: float) -> void:
-	# Change the volume of the background music
-	pass 
-#endregion
 
-
-#region Hand Button Functionality
-# Item choices menu such as dropping it?
-# Call this function 
-func ChangeHeldItem(newItemTexture):
-	$HeldItem.set_texture(newItemTexture)
-	
 #endregion
 
 
