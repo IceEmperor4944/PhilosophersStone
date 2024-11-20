@@ -3,7 +3,6 @@ class_name Spawner extends Ingredient
 #have objects in display in an array
 
 @export var speed = 400;
-#Type name (identifier) of ingredient
 
 var ingredient_scene = load("res://Scenes/HUD_v0.1.tscn") as PackedScene;
 var screen_size;

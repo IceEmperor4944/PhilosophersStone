@@ -44,8 +44,8 @@ func AssignIngredient(_type, _ingredient):
 #if ingredient type does not exist, then ingredient type will be "Error"
 #Additionally, if type does not exist, all other fields will be empty
 func CreateIngredient(type):
-	ingredient = Ingredient.new();
-	ingredient = AssignIngredient(type, ingredient)
+	ingredient = ingredient_scene.instantiate();
+	AssignIngredient(type, ingredient);
 	
 	return ingredient
 
@@ -64,17 +64,9 @@ func FindRecipeByType(type):
 		return "Error"
 
 
-func _on_hand_btn_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if Input.is_action_pressed("pick_up") && (get_global_mouse_position().x <= global_position.x + $Sprite2D.get_parent().position.x/10) && (get_global_mouse_position().x >= $Sprite2D.global_position.x - $Sprite2D.get_parent().position.x /10):
-			if (get_global_mouse_position().y <= $Sprite2D.global_position.y + $Sprite2D.get_parent().position.y/5) && (get_global_mouse_position().y >= $Sprite2D.global_position.y - $Sprite2D.get_parent().position.y /5):
-				CreateIngredient("water");
-				
-				has_mouse = true;
-				label.clear();
-				label.add_text("Clicked!");
-		elif (Input.is_action_just_released("pick_up")):
-			has_mouse = false;
-			label.clear();
-			label.add_text("Not Clicked!");
-				
+func _on_hand_btn_pressed() -> void:
+	var newIngredient = load("res://Scripts/waterspawner.gd").new();
+	newIngredient.AssignSprite("res://Assets/Magical/spr_stroked_potion_cyan.png");
+	newIngredient.position = get_global_mouse_position();
+	newIngredient.add_child($WaterSpawner.get_parent());
+	
