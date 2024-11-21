@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Quest for the Philosopher's Stone"
-run/main_scene="res://Scenes/Test.tscn"
+run/main_scene="res://Scenes/ExampleMain.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

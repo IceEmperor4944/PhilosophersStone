@@ -1,9 +1,49 @@
-[gd_scene load_steps=6 format=3 uid="uid://cl4s328wkb8qr"]
+[gd_scene load_steps=7 format=3 uid="uid://dnudmxqpyydjd"]
 
 [ext_resource type="Texture2D" uid="uid://vgy6kyyk6o51" path="res://Assets/Magical/spr_stroked_potion_testtube_cyan.png" id="2_8v0wi"]
 [ext_resource type="Texture2D" uid="uid://bnvlqkrh0src2" path="res://Assets/Magical/spr_stroked_potion_testtube_green.png" id="3_eso6x"]
 [ext_resource type="Texture2D" uid="uid://cxm6i3mxvuutn" path="res://Assets/Magical/spr_stroked_potion_testtube_orange.png" id="4_kutm6"]
 [ext_resource type="Texture2D" uid="uid://ceofdt04xoijm" path="res://Assets/Magical/spr_stroked_potion_testtube_blue.png" id="5_xhcl0"]
+
+[sub_resource type="GDScript" id="GDScript_pwcmd"]
+script/source = "extends Area2D
+
+#Type name (identifier) of ingredient
+var type = \"\"
+
+#Recipe order will be water earth fire, air 
+var m_recipe = [0, 0, 0, 0]
+
+#var m_spriteMap = {
+#	\"1\" = $AnimatedSprite2D.sprite_frames.water
+#}
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func AssignType(name):
+	type = name
+
+
+func AssignRecipe(recipe):
+	var i = 0;
+	
+	for element in recipe:
+		m_recipe[i] = element
+		i += 1
+		
+#\"Type\" here is for what type of ingredient is being assigned
+func AssignSprite(spritePathString):
+	$AnimatedSprite2D.texture = load(spritePathString);
+	
+"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_co57h"]
 animations = [{
@@ -41,6 +81,7 @@ animations = [{
 }]
 
 [node name="Ingredient" type="Area2D"]
+script = SubResource("GDScript_pwcmd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_co57h")

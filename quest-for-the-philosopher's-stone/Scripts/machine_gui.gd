@@ -11,28 +11,41 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#Pull reference of AlchemyTable
+	#AlchemyTable.ActiveInput = Array of Arrays (String Float)
+	
+	#activeinput[0][0] = water's name
+	#activeinput[0][1] = water's float
+	
+	#Local Array = Default setup of AlchemyTable.ActiveInput
 	
 	pass # Replace with function body.
 
 
 func _on_v_slider_value_changed(value: float) -> void:
 	l1.text = str(v1.value)
+	#Look at local array using the index name which is ingredient name
+	#change the [0][1] to value
 
 
 func _on_v_slider_2_value_changed(value: float) -> void:
 	l2.text = str(v2.value)
-
+	#change the [1][1] to value
 
 func _on_v_slider_3_value_changed(value: float) -> void:
 	l3.text = str(v3.value)
-
+	#change the [2][1] to value
 
 func _on_v_slider_4_value_changed(value: float) -> void:
 	l4.text = str(v4.value)
-
+	#change the [3][1] to value
 
 func _on_texture_button_button_down() -> void:
 	#Output Result
+	
+	#If valid result
+	#check if result already in array
+	#if not add to array and update shelf
 	
 	#Reset Sliders
 	v1.value=0
