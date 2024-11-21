@@ -1,4 +1,5 @@
-class_name Ingredient extends Area2D
+extends Area2D
+class_name Ingredient 
 
 @export var sprite = Sprite2D.new();
 
@@ -8,15 +9,6 @@ var type = ""
 #Recipe order will be water earth fire, air 
 var m_recipe = [0, 0, 0, 0]
 
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func AssignType(name):
 	type = name

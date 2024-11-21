@@ -1,4 +1,5 @@
-class_name Spawner extends Ingredient
+extends Ingredient
+class_name Spawner 
 
 #have objects in display in an array
 
