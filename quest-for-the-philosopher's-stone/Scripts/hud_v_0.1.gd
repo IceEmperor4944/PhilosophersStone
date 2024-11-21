@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-signal emitHandButtonPressed(pos)
+signal emitHandButtonPressed
 
 #region Clock Button Functionality
 # Change the hour of the game if that functionality is needed
@@ -21,8 +21,7 @@ func _on_settings_btn_toggled(toggled_on: bool):
 
 #region Hand Button Testing Functionality
 func _on_hand_btn_button_down() -> void:
-	var pos = DisplayServer.mouse_get_position()
-	emitHandButtonPressed.emit(pos)
+	emitHandButtonPressed.emit()
 #endregion
 
 #region Settings Menu Functionality
