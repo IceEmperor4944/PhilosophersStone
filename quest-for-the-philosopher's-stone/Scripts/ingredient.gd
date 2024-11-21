@@ -6,7 +6,7 @@ class_name Ingredient extends Area2D
 var type = ""
 
 #Recipe order will be water earth fire, air 
-var m_recipe = [0, 0, 0, 0]
+#var m_recipe = [0, 0, 0, 0]
 
 
 
@@ -22,12 +22,12 @@ func AssignType(name):
 	type = name
 
 
-func AssignRecipe(recipe):
-	var i = 0;
+#func AssignRecipe(recipe):
+	#var i = 0;
 	
-	for element in recipe:
-		m_recipe[i] = element
-		i += 1
+	#for element in recipe:
+		#m_recipe[i] = element
+		#i += 1
 		
 #"Type" here is for what type of ingredient is being assigned
 func AssignSprite(spritePathString):
