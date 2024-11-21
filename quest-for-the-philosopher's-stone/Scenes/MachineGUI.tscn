@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/machine_gui.gd" id="1_kaw44"]
 [ext_resource type="Texture2D" uid="uid://4eq3x217ekc8" path="res://Assets/Sprites/PlaceholderImages/SimpleMachine.png" id="1_lkpic"]
-[ext_resource type="Texture2D" uid="uid://blxe8x2twlteg" path="res://Assets/Sprites/PlaceholderImages/spr_stroked_hand.png" id="3_74r6s"]
+[ext_resource type="Texture2D" uid="uid://b62pb2jyx8nrp" path="res://Assets/Magical/spr_stroked_scroll_close_sealed_orange.png" id="3_yxlai"]
 
 [node name="Machine" type="Control"]
 layout_mode = 3
@@ -97,7 +97,7 @@ offset_left = 555.0
 offset_top = 527.0
 offset_right = 755.0
 offset_bottom = 727.0
-texture_normal = ExtResource("3_74r6s")
+texture_normal = ExtResource("3_yxlai")
 
 [connection signal="value_changed" from="VSlider" to="." method="_on_v_slider_value_changed"]
 [connection signal="value_changed" from="VSlider2" to="." method="_on_v_slider_2_value_changed"]
