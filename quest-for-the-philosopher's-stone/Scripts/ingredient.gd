@@ -2,7 +2,7 @@ class_name Ingredient extends Area2D
 
 @export var sprite = Sprite2D.new();
 
-@onready var ingredient = load("res://Scripts/ingredient_test.gd").new() as Ingredient;
+@onready var ingredient = load("res://Scripts/ingredient.gd").new() as Ingredient;
 var type = ""
 
 #Recipe order will be water earth fire, air 
