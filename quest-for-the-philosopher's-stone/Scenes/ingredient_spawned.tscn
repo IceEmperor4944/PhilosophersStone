@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cscbq4q3wy56i"]
+
+[ext_resource type="Script" path="res://Scripts/ingredient_spawned.gd" id="1_4p8mw"]
+[ext_resource type="Texture2D" uid="uid://ofrhqb8tlnds" path="res://Assets/Magical/spr_stroked_potion_blue.png" id="1_mghqk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2y08j"]
+radius = 87.0
+height = 180.0
+
+[node name="IngredientSpawned" type="Area2D"]
+script = ExtResource("1_4p8mw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mghqk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_2y08j")
