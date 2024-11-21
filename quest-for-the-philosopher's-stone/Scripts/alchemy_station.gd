@@ -6,6 +6,11 @@ var activeInput = [["water", 0], ["earth", 0], ["fire", 0], ["air", 0]]
 
 var numSlots = 24 #number of elements in a recipe
 
+#im is short for ingredient manager
+@onready var im = load("res://Scripts/ingredient_manager.gd").new() as IngredientManager;
+var list = im.list
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -43,21 +48,66 @@ func on_ingredient_removed(position):
 # To be rewriten
 # for use when alchemy table is activated to combine what it currently on it
 func on_Combine_Ingredients():
-	var numTypes = 0
-	
-	#next variables are for each element that can be in the recipe
-	var newRecipe = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+	#nullsInRecipe and nullsInActive record the number of nulls to compair at the end
+	#Because otherwise, certain combinations could probably return a false positive
+	var nullsInRecipe = 0
+	var nullsInActive = 0
+	var foundFromType = [false, false, false, false]
+	var foundMatch = false
+	var foundType = "null"
 	
 	for type in activeInput:
-		if type != [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]:
-			numTypes += 1
+		nullsInActive += 1
+	#next variables are for each element that can be in the recipe
+	#var newRecipe = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	
-	for i in range(numSlots):
-		for j in range(numTypes):
-			newRecipe[i] += activeInput[j][i]
-		newRecipe[i] /= numTypes
+	for ingredient in list:
+		foundMatch = true
+		nullsInRecipe = 0
+		for type in activeInput:
+			for i in range(4):
+				if ingredient[0][i][0] == "null":
+					nullsInRecipe += 1
+				if type[0] == ingredient[0][i][0]:
+					if type[1] == ingredient[0][i][1]:
+						foundFromType[i] = true
+		for i in range(4):
+			if foundFromType == false:
+				foundMatch = false
+		if nullsInActive != nullsInRecipe:
+			foundMatch = false
+		if foundMatch:
+			foundType = ingredient #this needs to give a key from the dictionary (if it doesn't, find a way to get the key that corresponds to that ingredient
+			return foundType #find a way to return the type, and do that HERE
+		else:
+			foundFromType = [false, false, false, false]
+				
 	
-	element_created.emit(newRecipe)
+	
+	#for ingredient in list:
+		#var tempRecipeTypes = [ingredient[0][0][0], ingredient[0][1][0], ingredient[0][2][0], ingredient[0][3][0]]
+		#for type in activeInput:
+			#if type[0] in tempRecipeTypes:
+				#for i in range(4):
+					#if type[0] == ingredient[0][i][0]:
+						#if type[1] == ingredient[0][i][1]:
+							#numTypes += 1
+						#else:
+							#foundMatch = false
+					#break
+					#break
+			#else:
+				#foundMatch = false
+			
+		
+			
+	
+	#for i in range(numSlots):
+		#for j in range(numTypes):
+			#newRecipe[i] += activeInput[j][i]
+		#newRecipe[i] /= numTypes
+	
+	#element_created.emit(newRecipe)
 	#return newRecipe
 
 # please input RECIPE of ingredient, NOT name
