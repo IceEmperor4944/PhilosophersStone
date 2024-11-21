@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4q4jley78old"]
+[gd_scene load_steps=4 format=3 uid="uid://b4q4jley78old"]
 
 [ext_resource type="PackedScene" uid="uid://dp0r2qikrjfyb" path="res://Scenes/HUD_v0.1.tscn" id="1_mnkpd"]
 [ext_resource type="AudioStream" uid="uid://fvq8h4w47yb1" path="res://Assets/Sounds/350703__fran_ky__126-num-alchemy-eagb-5.wav" id="2_4xcml"]
+[ext_resource type="PackedScene" uid="uid://ch0utvogqndvw" path="res://Scenes/MachineGUI.tscn" id="3_mv6bb"]
 
 [node name="ExampleMain" type="Node2D"]
 
@@ -11,3 +12,5 @@
 stream = ExtResource("2_4xcml")
 autoplay = true
 bus = &"Music"
+
+[node name="Machine" parent="." instance=ExtResource("3_mv6bb")]
