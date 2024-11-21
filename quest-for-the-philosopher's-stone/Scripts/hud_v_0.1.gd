@@ -29,3 +29,7 @@ func _on_hand_btn_button_down() -> void:
 func _on_new_game_btn_pressed():
 	get_tree().change_scene_to_file("res://Scenes/ExampleMain.tscn")
 #endregion
+
+
+func _on_hand_btn_pressed() -> void:
+	emit_signal("emitHandButtonPressed");

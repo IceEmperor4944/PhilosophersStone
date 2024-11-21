@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dp0r2qikrjfyb"]
+[gd_scene load_steps=7 format=3 uid="uid://dp0r2qikrjfyb"]
 
 [ext_resource type="Script" path="res://Scripts/hud_v_0.1.gd" id="1_ukfln"]
 [ext_resource type="Texture2D" uid="uid://x3ee60wldnga" path="res://Assets/Sprites/PlaceholderImages/spr_stroked_clock.png" id="3_s4xdk"]
 [ext_resource type="Texture2D" uid="uid://bp76qkkeufu02" path="res://Assets/Sprites/PlaceholderImages/spr_rock.png" id="4_6eisy"]
 [ext_resource type="Texture2D" uid="uid://b0bhjtdg03ovm" path="res://Assets/Sprites/PlaceholderImages/Scroll_Wall.png" id="5_sych2"]
 [ext_resource type="Texture2D" uid="uid://blxe8x2twlteg" path="res://Assets/Sprites/PlaceholderImages/spr_stroked_hand.png" id="6_t5kjj"]
-[ext_resource type="PackedScene" uid="uid://1pankatdktfq" path="res://Scenes/Test.tscn" id="7_74cba"]
 [ext_resource type="Texture2D" uid="uid://d0o1b275n4it0" path="res://Assets/Sprites/PlaceholderImages/volumeScaledDown.png" id="7_l7vpp"]
 
 [node name="HUD" type="CanvasLayer"]
@@ -126,8 +125,6 @@ offset_bottom = -158.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Ingredient_Manager_Test" parent="." instance=ExtResource("7_74cba")]
-
 [connection signal="mouse_entered" from="ClockBtn" to="." method="_on_clock_btn_mouse_entered"]
 [connection signal="mouse_exited" from="ClockBtn" to="." method="_on_clock_btn_mouse_exited"]
 [connection signal="mouse_entered" from="PhiloStoneBtn" to="." method="_on_philo_stone_btn_mouse_entered"]
@@ -136,5 +133,6 @@ grow_vertical = 0
 [connection signal="mouse_exited" from="SettingsBtn" to="." method="_on_settings_btn_mouse_exited"]
 [connection signal="toggled" from="SettingsBtn" to="." method="_on_settings_btn_toggled"]
 [connection signal="button_down" from="HandBtn" to="." method="_on_hand_btn_button_down"]
+[connection signal="pressed" from="HandBtn" to="." method="_on_hand_btn_pressed"]
 [connection signal="pressed" from="SettingsMenu/MarginContainer/VBoxContainer/NewGameBtn" to="." method="_on_new_game_btn_pressed"]
 [connection signal="value_changed" from="SettingsMenu/MarginContainer/VBoxContainer/VolSlider" to="." method="_on_vol_slider_value_changed"]

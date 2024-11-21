@@ -3,7 +3,8 @@ class_name Ingredient
 
 @export var sprite = Sprite2D.new();
 
-@onready var ingredient = load("res://Scripts/ingredient.gd").new() as Ingredient;
+@onready var ingredient = Ingredient.new();
+
 
 var type = ""
 
@@ -42,11 +43,3 @@ func CreateIngredient(type):
 	AssignIngredient(type, ingredient);
 	
 	return ingredient
-
-
-func _on_hand_btn_pressed() -> void:
-	var newIngredient = load("res://Scripts/waterspawner.gd").new();
-	newIngredient.AssignSprite("res://Assets/Magical/spr_stroked_potion_cyan.png");
-	newIngredient.position = get_global_mouse_position();
-	newIngredient.add_child($WaterSpawner.get_parent());
-	

@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://1pankatdktfq"]
+[gd_scene load_steps=7 format=3 uid="uid://1pankatdktfq"]
 
+[ext_resource type="Script" path="res://Scenes/test_main.gd" id="1_06iel"]
+[ext_resource type="PackedScene" uid="uid://dp0r2qikrjfyb" path="res://Scenes/HUD_v0.1.tscn" id="1_6378c"]
 [ext_resource type="Script" path="res://Scripts/waterspawner.gd" id="2_bng6u"]
 [ext_resource type="Texture2D" uid="uid://ctd0wylbv6i8p" path="res://Assets/Magical/spr_stroked_potion_cyan.png" id="3_lili3"]
+[ext_resource type="PackedScene" uid="uid://cscbq4q3wy56i" path="res://Scenes/ingredient_spawned.tscn" id="4_tjny8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hxvn1"]
 radius = 33.1839
@@ -9,10 +12,15 @@ height = 86.0
 
 [node name="Ingredient" type="Node2D"]
 position = Vector2(3, 2)
+script = ExtResource("1_06iel")
+scene = ExtResource("4_tjny8")
+
+[node name="HUD" parent="." instance=ExtResource("1_6378c")]
 
 [node name="WaterSpawner" type="Area2D" parent="."]
 position = Vector2(469, 206)
 script = ExtResource("2_bng6u")
+speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="WaterSpawner"]
 position = Vector2(1, -10)
@@ -30,4 +38,6 @@ offset_right = 194.0
 offset_bottom = 40.0
 text = "Please Click and Drag"
 
-[connection signal="mouse_entered" from="WaterSpawner" to="." method="_on_water_spawner_mouse_entered"]
+[node name="IngredientSpawned" parent="." instance=ExtResource("4_tjny8")]
+
+[connection signal="emitHandButtonPressed" from="HUD" to="WaterSpawner" method="_on_hud_emit_hand_button_pressed"]
