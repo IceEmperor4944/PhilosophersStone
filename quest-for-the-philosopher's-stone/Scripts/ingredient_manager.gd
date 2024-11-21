@@ -1,5 +1,5 @@
-extends Node2D
-class_name IngredientManager 
+class_name IngredientManager
+
 
 @export var list = {
 	"water" = [[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "res://Assets/Magical/spr_stroked_potion_testtube_blue.png"],
