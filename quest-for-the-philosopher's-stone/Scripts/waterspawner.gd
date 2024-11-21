@@ -6,14 +6,14 @@ class_name Spawner extends Ingredient
 var screen_size;
 var has_mouse:bool = false;
 var ingredient_manager_script;
-@onready var ingredient_manager = load("res://Scripts/ingredient_manager_test.gd").new() as IngredientManager;
+@onready var ingredient_manager = load("res://Scripts/ingredient_manager.gd").new() as IngredientManager;
 @onready var newIngredient = Spawner.new();
 @onready var label = $RichTextLabel;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size;
-	ingredient_manager_script = load("res://Scripts/ingredient_manager_test.gd").new();	
+	ingredient_manager_script = load("res://Scripts/ingredient_manager.gd").new();	
 	
 func SpawnObject():
 	newIngredient = ingredient_manager.CreateIngredient("water");
