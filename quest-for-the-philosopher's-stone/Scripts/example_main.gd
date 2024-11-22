@@ -38,4 +38,5 @@ func _on_slider_area_1_area_shape_exited(area_rid: RID, area: Area2D, area_shape
 
 
 func _on_hud_emit_hand_button_pressed() -> void:
-	pass # Replace with function body.
+	var instance = IngredientSpawnedScene.instantiate()
+	add_child(instance)
