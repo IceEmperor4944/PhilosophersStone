@@ -39,7 +39,3 @@ func _process(delta: float) -> void:
 		
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
-
-
-func _on_hud_emit_hand_button_pressed(pos: Variant) -> void:
-	
