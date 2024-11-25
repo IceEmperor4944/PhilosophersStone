@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4q4jley78old"]
+[gd_scene load_steps=7 format=3 uid="uid://b4q4jley78old"]
 
 [ext_resource type="PackedScene" uid="uid://dp0r2qikrjfyb" path="res://Scenes/HUD_v0.1.tscn" id="1_mnkpd"]
 [ext_resource type="Script" path="res://Scripts/example_main.gd" id="1_ya51b"]
 [ext_resource type="AudioStream" uid="uid://fvq8h4w47yb1" path="res://Assets/Sounds/350703__fran_ky__126-num-alchemy-eagb-5.wav" id="2_4xcml"]
 [ext_resource type="PackedScene" uid="uid://ch0utvogqndvw" path="res://Scenes/MachineGUI.tscn" id="3_mv6bb"]
+[ext_resource type="Script" path="res://Scenes/ingredients_collection.gd" id="5_jx6qj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ck8ct"]
+size = Vector2(15.1423, 36.4063)
 
 [node name="ExampleMain" type="Node2D"]
 script = ExtResource("1_ya51b")
@@ -16,3 +20,44 @@ autoplay = true
 bus = &"Music"
 
 [node name="Machine" parent="." instance=ExtResource("3_mv6bb")]
+
+[node name="SliderArea1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SliderArea1"]
+position = Vector2(321.5, 249.5)
+scale = Vector2(9.84, 6.4)
+shape = SubResource("RectangleShape2D_ck8ct")
+
+[node name="SliderArea2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SliderArea2"]
+position = Vector2(546, 252)
+scale = Vector2(9.84, 6.4)
+shape = SubResource("RectangleShape2D_ck8ct")
+
+[node name="SliderArea3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SliderArea3"]
+position = Vector2(760, 256)
+scale = Vector2(9.84, 6.4)
+shape = SubResource("RectangleShape2D_ck8ct")
+
+[node name="SliderArea4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SliderArea4"]
+position = Vector2(983, 244)
+scale = Vector2(9.84, 6.4)
+shape = SubResource("RectangleShape2D_ck8ct")
+
+[node name="ingredientsCollection" type="Node2D" parent="."]
+script = ExtResource("5_jx6qj")
+
+[connection signal="emitHandButtonPressed" from="HUD" to="." method="_on_hud_emit_hand_button_pressed"]
+[connection signal="area_shape_entered" from="SliderArea1" to="." method="_on_slider_area_1_area_shape_entered"]
+[connection signal="area_shape_exited" from="SliderArea1" to="." method="_on_slider_area_1_area_shape_exited"]
+[connection signal="body_entered" from="SliderArea2" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="SliderArea2" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="SliderArea3" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="SliderArea3" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="SliderArea4" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="SliderArea4" to="." method="_on_area_2d_body_exited"]
