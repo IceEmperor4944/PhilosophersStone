@@ -7,9 +7,6 @@ class_name Spawner
 var screen_size;
 var has_mouse:bool = false;
 
-
-@onready var label = $RichTextLabel;
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size;
@@ -22,12 +19,8 @@ func _input(event):
 				ingredient.position = position;
 				
 				has_mouse = true;
-				label.clear();
-				label.add_text("Clicked!");
 		elif (Input.is_action_just_released("pick_up")):
 			has_mouse = false;
-			label.clear();
-			label.add_text("Not Clicked!");
 				
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
