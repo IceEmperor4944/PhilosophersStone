@@ -3,13 +3,25 @@ class_name Spawner
 
 #have objects in display in an array
 
+#@export var sprite = Sprite2D.new();
 @export var speed = 400;
 var screen_size;
 var has_mouse:bool = false;
 
+@onready var im = load("res://Scripts/ingredient_manager.gd").new() as IngredientManager;
+var list;
+
+var type = "";
+var spritePath = "";
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size;
+	list = im.list
+	type = "earth"
+	#spritePath = "res://Assets/Magical/spr_stroked_potion_testtube_blue.png"
+	#spritePath = 
+	$Sprite2D.texture = load(list[type][2])
 	
 	
 func _input(event):
@@ -32,3 +44,5 @@ func _process(delta: float) -> void:
 		
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
+	
+	
