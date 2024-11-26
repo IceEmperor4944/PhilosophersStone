@@ -41,6 +41,9 @@ func on_change_percentage(percentage, position):
 func on_ingredient_removed(position):
 	activeInput[position] = ["null", 0]
 	
+func _on_machine_on_slider_moved(value: Variant, position: Variant) -> void:
+	activeInput[position][1] = value
+	
 	
 	#DO NOT FORGET to add a fuction to change ratio of amount each element in the table
 	
