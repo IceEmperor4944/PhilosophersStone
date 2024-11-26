@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://x3ee60wldnga" path="res://Assets/Sprites/PlaceholderImages/spr_stroked_clock.png" id="3_s4xdk"]
 [ext_resource type="Texture2D" uid="uid://bp76qkkeufu02" path="res://Assets/Sprites/PlaceholderImages/spr_rock.png" id="4_6eisy"]
 [ext_resource type="Texture2D" uid="uid://b0bhjtdg03ovm" path="res://Assets/Sprites/PlaceholderImages/Scroll_Wall.png" id="5_sych2"]
-[ext_resource type="Texture2D" uid="uid://blxe8x2twlteg" path="res://Assets/Sprites/PlaceholderImages/spr_stroked_hand.png" id="6_t5kjj"]
+[ext_resource type="Texture2D" uid="uid://ctd0wylbv6i8p" path="res://Assets/Magical/spr_stroked_potion_cyan.png" id="5_vc17r"]
 [ext_resource type="Texture2D" uid="uid://d0o1b275n4it0" path="res://Assets/Sprites/PlaceholderImages/volumeScaledDown.png" id="7_l7vpp"]
 
 [node name="HUD" type="CanvasLayer"]
@@ -47,19 +47,20 @@ texture_normal = ExtResource("5_sych2")
 metadata/_edit_use_anchors_ = true
 
 [node name="HandBtn" type="TextureButton" parent="."]
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.500391
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 0.500391
 anchor_bottom = 1.0
-offset_left = 62.5
-offset_top = -228.0
-offset_right = 262.5
-offset_bottom = -28.0
+offset_left = -638.5
+offset_top = -105.0
+offset_right = -438.5
+offset_bottom = 95.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.5, 0.5)
 tooltip_text = "Holding"
-texture_normal = ExtResource("6_t5kjj")
+texture_normal = ExtResource("5_vc17r")
 metadata/_edit_use_anchors_ = true
 
 [node name="SettingsMenu" type="PanelContainer" parent="."]
