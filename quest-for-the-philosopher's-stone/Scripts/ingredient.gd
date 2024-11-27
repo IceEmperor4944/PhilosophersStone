@@ -6,14 +6,14 @@ class_name Ingredient
 @onready var ingredient = Ingredient.new();
 
 
-var type = ""
+#var type = ""
 
 #Recipe order will be water earth fire, air 
 var m_recipe = [0, 0, 0, 0]
 
 
-func AssignType(name):
-	type = name
+#func AssignType(name):
+#	type = name
 
 
 func AssignRecipe(recipe):
