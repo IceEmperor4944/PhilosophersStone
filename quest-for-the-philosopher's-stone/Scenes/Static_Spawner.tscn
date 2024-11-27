@@ -29,3 +29,4 @@ shape = SubResource("CapsuleShape2D_hxvn1")
 
 [connection signal="area_shape_entered" from="WaterSpawner" to="." method="_on_water_spawner_area_shape_entered"]
 [connection signal="area_shape_exited" from="WaterSpawner" to="." method="_on_water_spawner_area_shape_exited"]
+[connection signal="onClickReleased" from="WaterSpawner" to="." method="_on_water_spawner_on_click_released"]

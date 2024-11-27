@@ -42,8 +42,13 @@ func _on_machine_on_slider_moved(value: Variant, position: Variant) -> void:
 # Where type is the name of the element/potion that is being added
 # And position is which part of the array it is being added to
 	# Each position in the array will correspond to exactly one part of the alchemy table (where you can place elements into it)
-func _on_machine_on_ingredient_added(type: Variant, position: Variant) -> void:
+func _on_ingredient_on_ingredient_added(type: Variant, position: Variant) -> void:
 	activeInput[position] = [type, 0]
+
+#likely not in use anymore
+func _on_machine_on_ingredient_added(type: Variant, position: Variant) -> void:
+	pass
+	#activeInput[position] = [type, 0]
 
 	
 	#DO NOT FORGET to add a fuction to change ratio of amount each element in the table

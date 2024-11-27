@@ -14,11 +14,13 @@ var list;
 var type = "";
 var spritePath = "";
 
+signal onClickReleased(typeName)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size;
 	list = im.list
-	type = "earth"
+	type = "fire"
 	#spritePath = "res://Assets/Magical/spr_stroked_potion_testtube_blue.png"
 	#spritePath = 
 	$Sprite2D.texture = load(list[type][2])
@@ -33,6 +35,7 @@ func _input(event):
 				has_mouse = true;
 		elif (Input.is_action_just_released("pick_up")):
 			has_mouse = false;
+			onClickReleased.emit(type)
 				
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -46,3 +49,8 @@ func _process(delta: float) -> void:
 	position = position.clamp(Vector2.ZERO, screen_size)
 	
 	
+
+
+func _on_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	
+	pass # Replace with function body.
