@@ -11,7 +11,6 @@ height = 86.0
 [node name="Ingredient" type="Node2D"]
 position = Vector2(3, 2)
 script = ExtResource("1_i81sq")
-scene = null
 
 [node name="WaterSpawner" type="Area2D" parent="."]
 position = Vector2(469, 206)
@@ -27,3 +26,5 @@ texture = ExtResource("4_d2gbl")
 position = Vector2(-420, 373)
 rotation = -0.333078
 shape = SubResource("CapsuleShape2D_hxvn1")
+
+[connection signal="area_shape_entered" from="WaterSpawner" to="." method="_on_water_spawner_area_shape_entered"]
