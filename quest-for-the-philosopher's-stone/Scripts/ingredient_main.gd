@@ -69,3 +69,4 @@ func _on_slider_area_4_area_shape_exited(area_rid: RID, area: Area2D, area_shape
 func _on_water_spawner_on_click_released(typeName: Variant) -> void:
 	if(inArea >= 0 && inArea <= 3):
 		onIngredientAdded.emit(typeName, inArea)
+		queue_free()
