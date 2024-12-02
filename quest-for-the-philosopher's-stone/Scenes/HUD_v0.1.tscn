@@ -11,6 +11,7 @@
 script = ExtResource("1_ukfln")
 
 [node name="ClockBtn" type="TextureButton" parent="."]
+visible = false
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 210.0
@@ -20,6 +21,7 @@ texture_normal = ExtResource("3_s4xdk")
 metadata/_edit_use_anchors_ = true
 
 [node name="PhiloStoneBtn" type="TextureButton" parent="."]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -126,11 +128,7 @@ offset_bottom = -158.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[connection signal="mouse_entered" from="ClockBtn" to="." method="_on_clock_btn_mouse_entered"]
-[connection signal="mouse_exited" from="ClockBtn" to="." method="_on_clock_btn_mouse_exited"]
 [connection signal="button_down" from="PhiloStoneBtn" to="." method="_on_philo_stone_btn_button_down"]
-[connection signal="mouse_entered" from="PhiloStoneBtn" to="." method="_on_philo_stone_btn_mouse_entered"]
-[connection signal="mouse_exited" from="PhiloStoneBtn" to="." method="_on_philo_stone_btn_mouse_exited"]
 [connection signal="mouse_entered" from="SettingsBtn" to="." method="_on_settings_btn_mouse_entered"]
 [connection signal="mouse_exited" from="SettingsBtn" to="." method="_on_settings_btn_mouse_exited"]
 [connection signal="toggled" from="SettingsBtn" to="." method="_on_settings_btn_toggled"]
