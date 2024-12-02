@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyi3vmpcojrvn"]
+[gd_scene load_steps=6 format=3 uid="uid://dyi3vmpcojrvn"]
 
 [ext_resource type="Script" path="res://Scripts/ingredient_main.gd" id="1_2yjdr"]
+[ext_resource type="PackedScene" uid="uid://b4q4jley78old" path="res://Scenes/ExampleMain.tscn" id="2_skrk8"]
 [ext_resource type="Script" path="res://Scripts/waterspawner.gd" id="3_jmuvv"]
 [ext_resource type="Texture2D" uid="uid://ctd0wylbv6i8p" path="res://Assets/Magical/spr_stroked_potion_cyan.png" id="4_nubri"]
 
@@ -9,8 +10,8 @@ radius = 33.1839
 height = 86.0
 
 [node name="Spawned_Ingredient" type="Node2D"]
-position = Vector2(3, 2)
 script = ExtResource("1_2yjdr")
+scene = ExtResource("2_skrk8")
 
 [node name="WaterSpawner" type="Area2D" parent="."]
 script = ExtResource("3_jmuvv")
