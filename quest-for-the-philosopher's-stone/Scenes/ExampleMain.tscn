@@ -56,6 +56,7 @@ shape = SubResource("RectangleShape2D_ck8ct")
 [node name="AlchemyStation" parent="." instance=ExtResource("7_1veev")]
 
 [node name="Inventory" parent="." instance=ExtResource("7_k6tgi")]
+position = Vector2(55, 57)
 
 [connection signal="emitHandButtonPressed" from="HUD" to="Ingredient" method="_on_hud_emit_hand_button_pressed"]
 [connection signal="combineIngredients" from="Machine" to="AlchemyStation" method="_on_machine_combine_ingredients"]

@@ -9,3 +9,4 @@ func _process(delta: float) -> void:
 	#var v1 = $Machine/VSlider.value
 	pass
 #endregion
+	
