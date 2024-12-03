@@ -9,7 +9,6 @@ radius = 33.1839
 height = 86.0
 
 [node name="Spawned_Ingredient" type="Node2D"]
-position = Vector2(3, 2)
 script = ExtResource("1_2yjdr")
 
 [node name="WaterSpawner" type="Area2D" parent="."]
