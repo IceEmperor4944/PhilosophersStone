@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4q4jley78old"]
+[gd_scene load_steps=9 format=3 uid="uid://b4q4jley78old"]
 
 [ext_resource type="PackedScene" uid="uid://dp0r2qikrjfyb" path="res://Scenes/HUD_v0.1.tscn" id="1_mnkpd"]
 [ext_resource type="Script" path="res://Scripts/example_main.gd" id="1_ya51b"]
 [ext_resource type="AudioStream" uid="uid://fvq8h4w47yb1" path="res://Assets/Sounds/350703__fran_ky__126-num-alchemy-eagb-5.wav" id="2_4xcml"]
-[ext_resource type="PackedScene" uid="uid://ch0utvogqndvw" path="res://Scenes/MachineGUI.tscn" id="6_einlv"]
+[ext_resource type="PackedScene" uid="uid://ch0utvogqndvw" path="res://Scenes/MachineGUI.tscn" id="3_mv6bb"]
+[ext_resource type="PackedScene" uid="uid://cj2nxn0mgywfo" path="res://Scenes/Static_Spawner.tscn" id="6_einlv"]
 [ext_resource type="PackedScene" uid="uid://bbyvau6uoyg32" path="res://Scenes/alchemy_station.tscn" id="7_1veev"]
 [ext_resource type="PackedScene" uid="uid://43rha6k7k2r5" path="res://Scenes/inventory.tscn" id="7_k6tgi"]
 
@@ -20,7 +21,7 @@ stream = ExtResource("2_4xcml")
 autoplay = true
 bus = &"Music"
 
-[node name="Machine" parent="." instance=ExtResource("6_einlv")]
+[node name="Machine" parent="." instance=ExtResource("3_mv6bb")]
 
 [node name="SliderArea1" type="Area2D" parent="."]
 
@@ -50,10 +51,13 @@ position = Vector2(983, 244)
 scale = Vector2(9.84, 6.4)
 shape = SubResource("RectangleShape2D_ck8ct")
 
+[node name="Ingredient" parent="." instance=ExtResource("6_einlv")]
+
 [node name="AlchemyStation" parent="." instance=ExtResource("7_1veev")]
 
 [node name="Inventory" parent="." instance=ExtResource("7_k6tgi")]
 
+[connection signal="emitHandButtonPressed" from="HUD" to="Ingredient" method="_on_hud_emit_hand_button_pressed"]
 [connection signal="combineIngredients" from="Machine" to="AlchemyStation" method="_on_machine_combine_ingredients"]
 [connection signal="onIngredientAdded" from="Machine" to="AlchemyStation" method="_on_machine_on_ingredient_added"]
 [connection signal="onSliderMoved" from="Machine" to="AlchemyStation" method="_on_machine_on_slider_moved"]
