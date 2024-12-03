@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cj2nxn0mgywfo"]
+[gd_scene load_steps=7 format=3 uid="uid://cj2nxn0mgywfo"]
 
 [ext_resource type="Script" path="res://Scripts/ingredient_main.gd" id="1_i81sq"]
-[ext_resource type="PackedScene" uid="uid://dyi3vmpcojrvn" path="res://Scenes/Spawned_Ingredient.tscn" id="2_uxhn8"]
 [ext_resource type="Script" path="res://Scripts/waterspawner.gd" id="3_vicai"]
 [ext_resource type="Texture2D" uid="uid://ctd0wylbv6i8p" path="res://Assets/Magical/spr_stroked_potion_cyan.png" id="4_d2gbl"]
 
@@ -9,9 +8,26 @@
 radius = 33.1839
 height = 86.0
 
+[sub_resource type="PackedScene" id="PackedScene_hvwuq"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Spawned_Ingredient", "script", "Node2D", "WaterSpawner", "sprite", "Area2D", "Sprite2D", "position", "rotation", "scale", "texture", "CollisionShape2D", "shape"),
+"node_count": 4,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2, 0, -1, 1, 1, 0, 0, 0, 0, 5, 3, -1, 2, 1, 1, 1073741828, 2, 0, 1, 0, 6, 6, -1, 4, 7, 3, 8, 4, 9, 5, 10, 6, 0, 1, 0, 11, 11, -1, 3, 7, 7, 8, 8, 12, 9, 0),
+"variants": [ExtResource("1_i81sq"), ExtResource("3_vicai"), NodePath("Sprite2D"), Vector2(100, 370), 0.0404028, Vector2(0.5, 0.526), ExtResource("4_d2gbl"), Vector2(98, 371), -0.333078, SubResource("CapsuleShape2D_gnjh0")],
+"version": 3
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8ajnr"]
+radius = 33.1839
+height = 86.0
+
 [node name="Static_Spawner" type="Node2D"]
 script = ExtResource("1_i81sq")
-scene = ExtResource("2_uxhn8")
+scene = SubResource("PackedScene_hvwuq")
 
 [node name="WaterSpawner" type="Area2D" parent="."]
 script = ExtResource("3_vicai")
@@ -25,4 +41,4 @@ texture = ExtResource("4_d2gbl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterSpawner"]
 position = Vector2(98, 371)
 rotation = -0.333078
-shape = SubResource("CapsuleShape2D_gnjh0")
+shape = SubResource("CapsuleShape2D_8ajnr")
