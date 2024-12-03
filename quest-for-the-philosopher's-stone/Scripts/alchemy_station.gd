@@ -10,6 +10,7 @@ var numSlots = 24 #number of elements in a recipe
 @onready var im = load("res://Scripts/ingredient_manager.gd").new() as IngredientManager;
 var list;
 
+signal foundTypeSignal(foundTypeName)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -56,7 +57,7 @@ func _on_machine_on_ingredient_added(type: Variant, position: Variant) -> void:
 	
 
 # for use when alchemy table is activated to combine what it currently on it
-func on_Combine_Ingredients():
+func _on_machine_combine_ingredients() -> void:
 	#nullsInRecipe and nullsInActive record the number of nulls to compair at the end
 	#Because otherwise, certain combinations could probably return a false positive
 	var nullsInRecipe = 0
@@ -85,7 +86,7 @@ func on_Combine_Ingredients():
 			foundMatch = false
 		if foundMatch:
 			foundType = ingredient #this needs to give a key from the dictionary (if it doesn't, find a way to get the key that corresponds to that ingredient
-			return foundType #find a way to return the type, and do that HERE
+			foundTypeSignal.emit(foundType) #find a way to return the type, and do that HERE
 		else:
 			foundFromType = [false, false, false, false]
 				
