@@ -2,7 +2,9 @@ extends Node2D
 
 signal element_created(recipe)
 
-var activeInput = [["water", 0], ["earth", 0], ["fire", 0], ["air", 0]]
+var activeInput = [["water", 0.0], ["earth", 0.0], ["fire", 0.0], ["air", 0.0]]
+#var activeInput = [["fire", 0.6], ["earth", 0.4], ["salt", 0.0], ["bismuth", 0.0]] #This is for testing purposes
+
 
 var numSlots = 24 #number of elements in a recipe
 
@@ -28,7 +30,7 @@ func _process(delta: float) -> void:
 # ready to attach to necessary signal
 # for use when an ingredient is removed from the table BUT IS NOT REPLACED
 func on_ingredient_removed(position):
-	activeInput[position] = ["null", 0]
+	activeInput[position] = ["none", 0]
 	
 	
 #changes the percentage of the ingredient that is being adjusted
@@ -64,45 +66,45 @@ func _on_machine_combine_ingredients() -> void:
 	var nullsInActive = 0
 	var foundFromType = [false, false, false, false]
 	var foundMatch = false
-	var foundType = "null"
+	var foundType = "none"
 	
-	for type in activeInput:
-		nullsInActive += 1
+	for i in range(4):
+		if activeInput[i][0] == "none" || activeInput[i][1] == 0:
+			nullsInActive += 1
 	
 	for ingredient in list:
 		foundMatch = true
 		nullsInRecipe = 0
-		for type in activeInput:
-			for i in range(4):
-				if ingredient[0][i][0] == "null":
+		foundFromType = [false, false, false, false]
+		foundType = "none"
+		#for type in activeInput:
+		for j in range(4):
+			if list[ingredient][0][j] == "none":
 					nullsInRecipe += 1
-				if type[0] == ingredient[0][i][0]:
-					if type[1] == ingredient[0][i][1]:
+			for i in range(4):
+				#if ingredient[0][i][0] == "null":
+				#if list[ingredient][0][i] == "none":
+					#nullsInRecipe += 1
+				#if type[0] == list[ingredient][0][i]:
+				if activeInput[j][0] == list[ingredient][0][i]:
+					#print(activeInput[j][0])
+					#print(list[ingredient][0][i])
+					if activeInput[j][1] == list[ingredient][1][i]:
+						#print(activeInput[j][1] == list[ingredient][1][i])
 						foundFromType[i] = true
+				#elif type[1] == 0:
+				elif activeInput[j][1] == 0:
+					if list[ingredient][0][i] == "none":
+						foundFromType[i] = true
+		
 		for i in range(4):
-			if foundFromType == false:
+			if foundFromType[i] == false:
 				foundMatch = false
 		if nullsInActive != nullsInRecipe:
+			#print(ingredient)
+			#print(nullsInRecipe)
 			foundMatch = false
 		if foundMatch:
 			foundType = ingredient #this needs to give a key from the dictionary (if it doesn't, find a way to get the key that corresponds to that ingredient
 			foundTypeSignal.emit(foundType) #find a way to return the type, and do that HERE
-		else:
-			foundFromType = [false, false, false, false]
-				
-	
-	
-	#for ingredient in list:
-		#var tempRecipeTypes = [ingredient[0][0][0], ingredient[0][1][0], ingredient[0][2][0], ingredient[0][3][0]]
-		#for type in activeInput:
-			#if type[0] in tempRecipeTypes:
-				#for i in range(4):
-					#if type[0] == ingredient[0][i][0]:
-						#if type[1] == ingredient[0][i][1]:
-							#numTypes += 1
-						#else:
-							#foundMatch = false
-					#break
-					#break
-			#else:
-				#foundMatch = false
+			#print(foundType)
