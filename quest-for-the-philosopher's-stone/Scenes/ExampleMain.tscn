@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4q4jley78old"]
+[gd_scene load_steps=9 format=3 uid="uid://b4q4jley78old"]
 
 [ext_resource type="PackedScene" uid="uid://dp0r2qikrjfyb" path="res://Scenes/HUD_v0.1.tscn" id="1_mnkpd"]
 [ext_resource type="Script" path="res://Scripts/example_main.gd" id="1_ya51b"]
 [ext_resource type="AudioStream" uid="uid://fvq8h4w47yb1" path="res://Assets/Sounds/350703__fran_ky__126-num-alchemy-eagb-5.wav" id="2_4xcml"]
 [ext_resource type="PackedScene" uid="uid://ch0utvogqndvw" path="res://Scenes/MachineGUI.tscn" id="6_einlv"]
 [ext_resource type="PackedScene" uid="uid://bbyvau6uoyg32" path="res://Scenes/alchemy_station.tscn" id="7_1veev"]
+[ext_resource type="PackedScene" uid="uid://c1hv6n68q7h2q" path="res://Scenes/Spawned_Ingredient.tscn" id="7_bjhy5"]
 [ext_resource type="PackedScene" uid="uid://43rha6k7k2r5" path="res://Scenes/inventory.tscn" id="7_k6tgi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ck8ct"]
@@ -54,6 +55,8 @@ shape = SubResource("RectangleShape2D_ck8ct")
 
 [node name="Inventory" parent="." instance=ExtResource("7_k6tgi")]
 position = Vector2(55, 57)
+
+[node name="Spawned_Ingredient" parent="." instance=ExtResource("7_bjhy5")]
 
 [connection signal="combineIngredients" from="Machine" to="AlchemyStation" method="_on_machine_combine_ingredients"]
 [connection signal="onIngredientAdded" from="Machine" to="AlchemyStation" method="_on_machine_on_ingredient_added"]
