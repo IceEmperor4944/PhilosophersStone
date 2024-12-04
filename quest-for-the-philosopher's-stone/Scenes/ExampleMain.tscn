@@ -51,12 +51,12 @@ position = Vector2(983, 244)
 scale = Vector2(9.84, 6.4)
 shape = SubResource("RectangleShape2D_ck8ct")
 
-[node name="Ingredient" parent="." instance=ExtResource("6_einlv")]
-
 [node name="AlchemyStation" parent="." instance=ExtResource("7_1veev")]
 
 [node name="Inventory" parent="." instance=ExtResource("7_k6tgi")]
 position = Vector2(55, 57)
+
+[node name="Ingredient" parent="." instance=ExtResource("6_einlv")]
 
 [connection signal="emitHandButtonPressed" from="HUD" to="Ingredient" method="_on_hud_emit_hand_button_pressed"]
 [connection signal="combineIngredients" from="Machine" to="AlchemyStation" method="_on_machine_combine_ingredients"]
