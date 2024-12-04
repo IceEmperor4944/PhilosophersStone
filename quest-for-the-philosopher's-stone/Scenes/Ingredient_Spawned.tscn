@@ -15,7 +15,7 @@ script = ExtResource("1_xhfhl")
 scene = ExtResource("2_dl75c")
 
 [node name="WaterSpawner" type="Area2D" parent="."]
-position = Vector2(54, 510)
+position = Vector2(47, 508)
 script = ExtResource("3_yfe3h")
 
 [node name="Sprite2D" type="Sprite2D" parent="WaterSpawner"]
