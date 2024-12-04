@@ -77,7 +77,7 @@ func _on_water_spawner_on_click_released(typeName: Variant) -> void:
 		inUse = false
 		print("changed to false")
 		#scene.$WaterSpawner/Sprite2D.hide()
-		scene.queue_free()
+		#scene.queue_free()
 		#scene = null
 		#print(typeName)
 		#print(inArea)
