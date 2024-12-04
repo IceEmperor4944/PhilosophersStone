@@ -1,0 +1,137 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdnjdljqudydv"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_dk2t1"]
+[ext_resource type="Texture2D" uid="uid://x3ee60wldnga" path="res://Assets/Sprites/PlaceholderImages/spr_stroked_clock.png" id="2_aabb6"]
+
+[node name="InventoryButtons" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_dk2t1")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 3
+
+[node name="waterBtn" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="earthBtn" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="fireBtn" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="airBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="iceBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="lavaBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="lifeBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="deathBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="stoneBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="metalBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="sandBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="poisonBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="eggBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="ironBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="chalkBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="goldBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="sulfurBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="mercuryBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="saltBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="copperBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="tinBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="leadBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="silverBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
+
+[node name="bismuthBtn" type="TextureButton" parent="GridContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("2_aabb6")
