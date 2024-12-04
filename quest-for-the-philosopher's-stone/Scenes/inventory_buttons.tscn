@@ -135,3 +135,28 @@ texture_normal = ExtResource("2_aabb6")
 visible = false
 layout_mode = 2
 texture_normal = ExtResource("2_aabb6")
+
+[connection signal="button_down" from="GridContainer/waterBtn" to="." method="_on_water_btn_button_down"]
+[connection signal="button_down" from="GridContainer/earthBtn" to="." method="_on_earth_btn_button_down"]
+[connection signal="button_down" from="GridContainer/fireBtn" to="." method="_on_fire_btn_button_down"]
+[connection signal="button_down" from="GridContainer/airBtn" to="." method="_on_air_btn_button_down"]
+[connection signal="button_down" from="GridContainer/iceBtn" to="." method="_on_ice_btn_button_down"]
+[connection signal="button_down" from="GridContainer/lavaBtn" to="." method="_on_lava_btn_button_down"]
+[connection signal="button_down" from="GridContainer/lifeBtn" to="." method="_on_life_btn_button_down"]
+[connection signal="button_down" from="GridContainer/deathBtn" to="." method="_on_death_btn_button_down"]
+[connection signal="button_down" from="GridContainer/stoneBtn" to="." method="_on_stone_btn_button_down"]
+[connection signal="button_down" from="GridContainer/metalBtn" to="." method="_on_metal_btn_button_down"]
+[connection signal="button_down" from="GridContainer/sandBtn" to="." method="_on_sand_btn_button_down"]
+[connection signal="button_down" from="GridContainer/poisonBtn" to="." method="_on_poison_btn_button_down"]
+[connection signal="button_down" from="GridContainer/eggBtn" to="." method="_on_egg_btn_button_down"]
+[connection signal="button_down" from="GridContainer/ironBtn" to="." method="_on_iron_btn_button_down"]
+[connection signal="button_down" from="GridContainer/chalkBtn" to="." method="_on_chalk_btn_button_down"]
+[connection signal="button_down" from="GridContainer/goldBtn" to="." method="_on_gold_btn_button_down"]
+[connection signal="button_down" from="GridContainer/sulfurBtn" to="." method="_on_sulfur_btn_button_down"]
+[connection signal="button_down" from="GridContainer/mercuryBtn" to="." method="_on_mercury_btn_button_down"]
+[connection signal="button_down" from="GridContainer/saltBtn" to="." method="_on_salt_btn_button_down"]
+[connection signal="button_down" from="GridContainer/copperBtn" to="." method="_on_copper_btn_button_down"]
+[connection signal="button_down" from="GridContainer/tinBtn" to="." method="_on_tin_btn_button_down"]
+[connection signal="button_down" from="GridContainer/leadBtn" to="." method="_on_lead_btn_button_down"]
+[connection signal="button_down" from="GridContainer/silverBtn" to="." method="_on_silver_btn_button_down"]
+[connection signal="button_down" from="GridContainer/bismuthBtn" to="." method="_on_bismuth_btn_button_down"]

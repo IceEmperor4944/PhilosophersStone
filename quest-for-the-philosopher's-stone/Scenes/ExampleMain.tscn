@@ -60,3 +60,4 @@ shape = SubResource("RectangleShape2D_ck8ct")
 [connection signal="body_exited" from="SliderArea3" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="SliderArea4" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="SliderArea4" to="." method="_on_area_2d_body_exited"]
+[connection signal="inventoryBtn" from="InventoryButtons" to="Static_Spawner" method="_on_inventory_buttons_inventory_btn"]
