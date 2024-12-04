@@ -10,7 +10,6 @@ radius = 33.1839
 height = 86.0
 
 [node name="Static_Spawner" type="Node2D"]
-position = Vector2(3, 2)
 script = ExtResource("1_i81sq")
 scene = ExtResource("2_2el56")
 

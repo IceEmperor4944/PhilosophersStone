@@ -56,10 +56,9 @@ shape = SubResource("RectangleShape2D_ck8ct")
 [node name="Inventory" parent="." instance=ExtResource("7_k6tgi")]
 position = Vector2(55, 57)
 
-[node name="Static_Spawner" parent="." instance=ExtResource("6_einlv")]
-position = Vector2(6, 4)
+[node name="Ingredient" parent="." instance=ExtResource("6_einlv")]
 
-[connection signal="emitHandButtonPressed" from="HUD" to="Static_Spawner" method="_on_hud_emit_hand_button_pressed"]
+[connection signal="emitHandButtonPressed" from="HUD" to="Ingredient" method="_on_hud_emit_hand_button_pressed"]
 [connection signal="combineIngredients" from="Machine" to="AlchemyStation" method="_on_machine_combine_ingredients"]
 [connection signal="onIngredientAdded" from="Machine" to="AlchemyStation" method="_on_machine_on_ingredient_added"]
 [connection signal="onSliderMoved" from="Machine" to="AlchemyStation" method="_on_machine_on_slider_moved"]
