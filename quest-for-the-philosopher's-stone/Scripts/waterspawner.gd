@@ -1,7 +1,6 @@
-extends Ingredient
-class_name Spawner 
+class_name Spawner extends Ingredient 
 
-#have objects in display in an array
+#have objects in display in an arrayS
 
 #@export var sprite = Sprite2D.new();
 @export var speed = 400;

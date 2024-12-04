@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://bba6yyojcxmov"]
+
+[ext_resource type="Script" path="res://Scripts/ingredient_main.gd" id="1_xhfhl"]
+[ext_resource type="PackedScene" uid="uid://cj2nxn0mgywfo" path="res://Scenes/Static_Spawner.tscn" id="2_jolhb"]
+[ext_resource type="Script" path="res://Scripts/waterspawner.gd" id="3_yfe3h"]
+[ext_resource type="Texture2D" uid="uid://ctd0wylbv6i8p" path="res://Assets/Magical/spr_stroked_potion_cyan.png" id="4_ertnd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gnjh0"]
+radius = 33.1839
+height = 86.0
+
+[node name="Ingredient_Spawned" type="Node2D"]
+position = Vector2(3, 2)
+script = ExtResource("1_xhfhl")
+scene = ExtResource("2_jolhb")
+
+[node name="WaterSpawner" type="Area2D" parent="."]
+position = Vector2(47, 508)
+script = ExtResource("3_yfe3h")
+
+[node name="Sprite2D" type="Sprite2D" parent="WaterSpawner"]
+scale = Vector2(0.5, 0.526)
+texture = ExtResource("4_ertnd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterSpawner"]
+shape = SubResource("CapsuleShape2D_gnjh0")

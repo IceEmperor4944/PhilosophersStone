@@ -11,6 +11,7 @@ extends Control
 
 signal onSliderMoved(value, position)
 signal onIngredientAdded(type, position)
+signal combineIngredients
 
 
 # Called when the node enters the scene tree for the first time.
@@ -51,10 +52,10 @@ func _on_v_slider_4_value_changed(value: float) -> void:
 
 func _on_texture_button_button_down() -> void:
 	#Output Result
-	
+	combineIngredients.emit()
 	#If valid result
 	#check if result already in array
-	#if not add to array and update shelf
+	#if not add to array and update inventory
 	
 	#Reset Sliders
 	v1.value=0
