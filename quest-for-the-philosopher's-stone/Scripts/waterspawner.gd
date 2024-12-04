@@ -22,7 +22,7 @@ func _ready():
 	#spritePath = "res://Assets/Magical/spr_stroked_potion_testtube_blue.png"
 	#spritePath = 
 	$Sprite2D.texture = load(list[type][2])
-	
+	position = Vector2(50, 500)
 	
 func _input(event):
 	if event is InputEventMouseButton:
@@ -40,8 +40,6 @@ func _process(delta: float) -> void:
 	if (has_mouse):
 		position = get_global_mouse_position();
 	
-	
-
 
 func _on_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	
