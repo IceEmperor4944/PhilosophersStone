@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://fvq8h4w47yb1" path="res://Assets/Sounds/350703__fran_ky__126-num-alchemy-eagb-5.wav" id="2_4xcml"]
 [ext_resource type="PackedScene" uid="uid://ch0utvogqndvw" path="res://Scenes/MachineGUI.tscn" id="3_mv6bb"]
 [ext_resource type="PackedScene" uid="uid://cj2nxn0mgywfo" path="res://Scenes/Static_Spawner.tscn" id="6_einlv"]
-[ext_resource type="PackedScene" uid="uid://c1hv6n68q7h2q" path="res://Scenes/Spawned_Ingredient.tscn" id="6_tragl"]
+[ext_resource type="PackedScene" uid="uid://cdnjdljqudydv" path="res://Scenes/inventory_buttons.tscn" id="7_yedff"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ck8ct"]
 size = Vector2(15.1423, 36.4063)
@@ -21,6 +21,7 @@ autoplay = true
 bus = &"Music"
 
 [node name="Machine" parent="." instance=ExtResource("3_mv6bb")]
+metadata/_edit_use_anchors_ = true
 
 [node name="SliderArea1" type="Area2D" parent="."]
 
@@ -51,7 +52,8 @@ scale = Vector2(9.84, 6.4)
 shape = SubResource("RectangleShape2D_ck8ct")
 
 [node name="Static_Spawner" parent="." instance=ExtResource("6_einlv")]
-scene = ExtResource("6_tragl")
+
+[node name="InventoryButtons" parent="." instance=ExtResource("7_yedff")]
 
 [connection signal="emitHandButtonPressed" from="HUD" to="Static_Spawner" method="_on_hud_emit_hand_button_pressed"]
 [connection signal="body_entered" from="SliderArea3" to="." method="_on_area_2d_body_entered"]
