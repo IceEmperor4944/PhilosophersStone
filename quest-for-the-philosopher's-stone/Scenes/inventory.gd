@@ -1,6 +1,6 @@
 extends Node2D
 
-const spawner = preload("res://Scenes/Static_Spawner.tscn")
+const spawner = preload("res://Scenes/Ingredient_Spawned.tscn")
 
 var rowSize = 3
 var colSize = 8
@@ -25,4 +25,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	for ingredientInstance in get_children():
+		if  ingredientInstance.inUse == false:
+			#ingredientInstance.remove_child(ingredientInstance)
+			remove_child(ingredientInstance)

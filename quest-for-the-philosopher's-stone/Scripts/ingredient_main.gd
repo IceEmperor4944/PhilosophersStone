@@ -6,11 +6,13 @@ signal onIngredientAdded(type, position)
 
 #This will be a number to signify which area it is in (if any) and will only be changed via signals
 var inArea;
+var inUse;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	inArea = -1;
-	pass
+	inUse = true
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,6 +39,7 @@ func _on_water_spawner_area_shape_exited(area_rid: RID, area: Area2D, area_shape
 
 func _on_slider_area_1_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	inArea = 0
+	print("Working")
 
 
 func _on_slider_area_1_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
@@ -71,4 +74,10 @@ func _on_slider_area_4_area_shape_exited(area_rid: RID, area: Area2D, area_shape
 func _on_water_spawner_on_click_released(typeName: Variant) -> void:
 	if(inArea >= 0 && inArea <= 3):
 		onIngredientAdded.emit(typeName, inArea)
-		queue_free()
+		inUse = false
+		print("changed to false")
+		#scene.$WaterSpawner/Sprite2D.hide()
+		scene.queue_free()
+		#scene = null
+		#print(typeName)
+		#print(inArea)
