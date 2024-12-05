@@ -8,12 +8,13 @@
 radius = 33.1839
 height = 86.0
 
-[node name="Ingredient_Spawned" type="Node2D"]
+[node name="Static_Spawner" type="Node2D"]
+position = Vector2(3, 2)
 script = ExtResource("1_xhfhl")
 
-[node name="WaterSpawner" type="Area2D" parent="." node_paths=PackedStringArray("sprite")]
+[node name="WaterSpawner" type="Area2D" parent="."]
+position = Vector2(54, 510)
 script = ExtResource("3_yfe3h")
-sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="WaterSpawner"]
 scale = Vector2(0.5, 0.526)

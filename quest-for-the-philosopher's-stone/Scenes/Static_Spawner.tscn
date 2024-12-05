@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cj2nxn0mgywfo"]
 
 [ext_resource type="Script" path="res://Scripts/ingredient_main.gd" id="1_i81sq"]
-[ext_resource type="PackedScene" uid="uid://bba6yyojcxmov" path="res://Scenes/Ingredient_Spawned.tscn" id="2_mh6o3"]
+[ext_resource type="PackedScene" uid="uid://bba6yyojcxmov" path="res://Scenes/Ingredient_Spawned.tscn" id="2_b5k4i"]
 [ext_resource type="Script" path="res://Scripts/waterspawner.gd" id="3_vicai"]
 [ext_resource type="Texture2D" uid="uid://ctd0wylbv6i8p" path="res://Assets/Magical/spr_stroked_potion_cyan.png" id="4_d2gbl"]
 
@@ -10,11 +10,12 @@ radius = 33.1839
 height = 86.0
 
 [node name="Static_Spawner" type="Node2D"]
+position = Vector2(3, 2)
 script = ExtResource("1_i81sq")
-scene = ExtResource("2_mh6o3")
+scene = ExtResource("2_b5k4i")
 
 [node name="WaterSpawner" type="Area2D" parent="."]
-visible = false
+position = Vector2(54, 510)
 script = ExtResource("3_vicai")
 
 [node name="Sprite2D" type="Sprite2D" parent="WaterSpawner"]
@@ -24,4 +25,5 @@ texture = ExtResource("4_d2gbl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterSpawner"]
 shape = SubResource("CapsuleShape2D_gnjh0")
 
-[connection signal="toWaterSpawner" from="." to="WaterSpawner" method="_on_static_spawner_to_water_spawner"]
+[connection signal="deleteSelf" from="." to="WaterSpawner" method="_on_static_spawner_delete_self"]
+[connection signal="onClickReleased" from="WaterSpawner" to="." method="_on_water_spawner_on_click_released"]

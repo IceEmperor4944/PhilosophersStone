@@ -1,17 +1,17 @@
 extends Node2D
 
 @export var scene : PackedScene
-
+signal deleteSelf
 signal onIngredientAdded(type, position)
-signal toWaterSpawner(name)
 
 #This will be a number to signify which area it is in (if any) and will only be changed via signals
 var inArea;
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	inArea = -1;
-	pass
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,11 +23,7 @@ func _input(event):
 	
 func _on_hud_emit_hand_button_pressed(pos: Variant) -> void:
 	var this_scene = scene.instantiate();
-	add_child(this_scene);
-	
-	
-
-
+	$"../children".add_child(this_scene);
 func _on_water_spawner_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	
 	pass # Replace with function body.
@@ -40,6 +36,7 @@ func _on_water_spawner_area_shape_exited(area_rid: RID, area: Area2D, area_shape
 
 func _on_slider_area_1_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	inArea = 0
+	print("Working")
 
 
 func _on_slider_area_1_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
@@ -74,14 +71,11 @@ func _on_slider_area_4_area_shape_exited(area_rid: RID, area: Area2D, area_shape
 func _on_water_spawner_on_click_released(typeName: Variant) -> void:
 	if(inArea >= 0 && inArea <= 3):
 		onIngredientAdded.emit(typeName, inArea)
-		queue_free()
-
-
-
-
-
-
-
-
-func _on_inventory_buttons_inventory_btn(name: Variant) -> void:
-	toWaterSpawner.emit(name)
+		print("should be emitting")
+		#$WaterSpawner/Sprite2D.hide()
+		#test.queue_free()
+		var children = $"../children".get_children()
+		for c in children:
+			self.remove_child(c)
+			c.queue_free()
+		
