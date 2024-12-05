@@ -22,7 +22,7 @@ func _ready():
 	#spritePath = "res://Assets/Magical/spr_stroked_potion_testtube_blue.png"
 	#spritePath = 
 	$Sprite2D.texture = load(list[type][2])
-	
+	position = Vector2(50, 500)
 	
 func _input(event):
 	if event is InputEventMouseButton:
