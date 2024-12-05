@@ -3,6 +3,7 @@ extends Node2D
 @export var scene : PackedScene
 
 signal onIngredientAdded(type, position)
+signal toWaterSpawner(name)
 
 #This will be a number to signify which area it is in (if any) and will only be changed via signals
 var inArea;
@@ -74,3 +75,13 @@ func _on_water_spawner_on_click_released(typeName: Variant) -> void:
 	if(inArea >= 0 && inArea <= 3):
 		onIngredientAdded.emit(typeName, inArea)
 		queue_free()
+
+
+
+
+
+
+
+
+func _on_inventory_buttons_inventory_btn(name: Variant) -> void:
+	toWaterSpawner.emit(name)
