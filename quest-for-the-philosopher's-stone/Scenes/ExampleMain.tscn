@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cj2nxn0mgywfo" path="res://Scenes/Static_Spawner.tscn" id="7_w8pqh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ck8ct"]
-size = Vector2(15.1423, 36.4063)
+size = Vector2(12.7033, 34.6875)
 
 [node name="ExampleMain" type="Node2D"]
 script = ExtResource("1_ya51b")
@@ -26,28 +26,28 @@ bus = &"Music"
 [node name="SliderArea1" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SliderArea1"]
-position = Vector2(321.5, 249.5)
+position = Vector2(314.5, 259)
 scale = Vector2(9.84, 6.4)
 shape = SubResource("RectangleShape2D_ck8ct")
 
 [node name="SliderArea2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SliderArea2"]
-position = Vector2(546, 252)
+position = Vector2(540, 258)
 scale = Vector2(9.84, 6.4)
 shape = SubResource("RectangleShape2D_ck8ct")
 
 [node name="SliderArea3" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SliderArea3"]
-position = Vector2(760, 256)
+position = Vector2(764, 261)
 scale = Vector2(9.84, 6.4)
 shape = SubResource("RectangleShape2D_ck8ct")
 
 [node name="SliderArea4" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SliderArea4"]
-position = Vector2(983, 244)
+position = Vector2(988, 259)
 scale = Vector2(9.84, 6.4)
 shape = SubResource("RectangleShape2D_ck8ct")
 
