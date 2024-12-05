@@ -47,8 +47,13 @@ func _process(delta: float) -> void:
 	position = position.clamp(Vector2.ZERO, screen_size)
 	
 	
+	
 
 
 func _on_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	
 	pass # Replace with function body.
+
+
+func _on_static_spawner_delete_self() -> void:
+	self.queue_free()

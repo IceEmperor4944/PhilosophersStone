@@ -37,6 +37,8 @@ func on_ingredient_removed(position):
 #Don't get position wrong or else the percentage will be changed for the wrong ingredient
 func _on_machine_on_slider_moved(value: Variant, position: Variant) -> void:
 	activeInput[position][1] = value
+	print(value)
+	print(position)
 	
 	
 # Recieves a signal with arguments(type, position)
@@ -45,11 +47,13 @@ func _on_machine_on_slider_moved(value: Variant, position: Variant) -> void:
 	# Each position in the array will correspond to exactly one part of the alchemy table (where you can place elements into it)
 func _on_ingredient_on_ingredient_added(type: Variant, position: Variant) -> void:
 	activeInput[position] = [type, 0]
+	print(type)
+	print(position)
+	print("test?")
 
 #likely not in use anymore
 func _on_machine_on_ingredient_added(type: Variant, position: Variant) -> void:
 	pass
-	#activeInput[position] = [type, 0]
 
 	
 	#DO NOT FORGET to add a fuction to change ratio of amount each element in the table

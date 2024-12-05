@@ -25,7 +25,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	for ingredientInstance in get_children():
-		if  ingredientInstance.inUse == false:
-			#ingredientInstance.remove_child(ingredientInstance)
-			remove_child(ingredientInstance)
+	pass

@@ -25,4 +25,5 @@ texture = ExtResource("4_d2gbl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterSpawner"]
 shape = SubResource("CapsuleShape2D_gnjh0")
 
+[connection signal="deleteSelf" from="." to="WaterSpawner" method="_on_static_spawner_delete_self"]
 [connection signal="onClickReleased" from="WaterSpawner" to="." method="_on_water_spawner_on_click_released"]
