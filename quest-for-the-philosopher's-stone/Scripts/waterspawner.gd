@@ -1,19 +1,28 @@
-extends Ingredient
-class_name Spawner 
+class_name Spawner extends Ingredient 
 
-#have objects in display in an array
+#have objects in display in an arrayS
 
+#@export var sprite = Sprite2D.new();
 @export var speed = 400;
 var screen_size;
 var has_mouse:bool = false;
 
+@onready var im = load("res://Scripts/ingredient_manager.gd").new() as IngredientManager;
+var list;
 
-@onready var label = $RichTextLabel;
+var spritePath = "";
+
+signal onClickReleased(typeName)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size;
-	
+	list = im.list
+	type = "fire"
+	#spritePath = "res://Assets/Magical/spr_stroked_potion_testtube_blue.png"
+	#spritePath = 
+	$Sprite2D.texture = load(list[type][2])
+	position = Vector2(50, 500)
 	
 func _input(event):
 	if event is InputEventMouseButton:
@@ -22,12 +31,9 @@ func _input(event):
 				ingredient.position = position;
 				
 				has_mouse = true;
-				label.clear();
-				label.add_text("Clicked!");
 		elif (Input.is_action_just_released("pick_up")):
 			has_mouse = false;
-			label.clear();
-			label.add_text("Not Clicked!");
+			onClickReleased.emit(type)
 				
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -39,3 +45,15 @@ func _process(delta: float) -> void:
 		
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
+	
+	
+	
+
+
+func _on_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	
+	pass # Replace with function body.
+
+
+func _on_static_spawner_delete_self() -> void:
+	self.queue_free()
