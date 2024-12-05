@@ -1,6 +1,6 @@
 extends Node2D
 
-const spawner = preload("res://Scenes/Static_Spawner.tscn")
+const spawner = preload("res://Scenes/Ingredient_Spawned.tscn")
 
 var rowSize = 3
 var colSize = 8
