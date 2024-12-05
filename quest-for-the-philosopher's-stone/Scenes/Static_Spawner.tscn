@@ -10,12 +10,11 @@ radius = 33.1839
 height = 86.0
 
 [node name="Static_Spawner" type="Node2D"]
-position = Vector2(3, 2)
 script = ExtResource("1_i81sq")
 scene = ExtResource("2_b5k4i")
 
 [node name="WaterSpawner" type="Area2D" parent="."]
-position = Vector2(54, 510)
+visible = false
 script = ExtResource("3_vicai")
 
 [node name="Sprite2D" type="Sprite2D" parent="WaterSpawner"]
