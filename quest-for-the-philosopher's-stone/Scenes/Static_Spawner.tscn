@@ -14,6 +14,7 @@ script = ExtResource("1_i81sq")
 scene = ExtResource("2_mh6o3")
 
 [node name="WaterSpawner" type="Area2D" parent="."]
+visible = false
 script = ExtResource("3_vicai")
 
 [node name="Sprite2D" type="Sprite2D" parent="WaterSpawner"]
