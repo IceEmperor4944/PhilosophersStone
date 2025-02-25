@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4q4jley78old"]
+[gd_scene load_steps=10 format=3 uid="uid://b4q4jley78old"]
 
 [ext_resource type="PackedScene" uid="uid://dp0r2qikrjfyb" path="res://Scenes/HUD_v0.1.tscn" id="1_mnkpd"]
 [ext_resource type="Script" path="res://Scripts/example_main.gd" id="1_ya51b"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ch0utvogqndvw" path="res://Scenes/MachineGUI.tscn" id="3_mv6bb"]
 [ext_resource type="PackedScene" uid="uid://bbyvau6uoyg32" path="res://Scenes/alchemy_station.tscn" id="7_1veev"]
 [ext_resource type="PackedScene" uid="uid://43rha6k7k2r5" path="res://Scenes/inventory.tscn" id="7_k6tgi"]
+[ext_resource type="PackedScene" uid="uid://cdnjdljqudydv" path="res://Scenes/inventory_buttons.tscn" id="7_sh82n"]
 [ext_resource type="PackedScene" uid="uid://cj2nxn0mgywfo" path="res://Scenes/Static_Spawner.tscn" id="7_w8pqh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ck8ct"]
@@ -60,6 +61,8 @@ position = Vector2(55, 57)
 [node name="Ingredient" parent="." instance=ExtResource("7_w8pqh")]
 
 [node name="children" type="Node2D" parent="."]
+
+[node name="InventoryButtons" parent="." instance=ExtResource("7_sh82n")]
 
 [connection signal="emitHandButtonPressed" from="HUD" to="Ingredient" method="_on_hud_emit_hand_button_pressed"]
 [connection signal="combineIngredients" from="Machine" to="AlchemyStation" method="_on_machine_combine_ingredients"]
